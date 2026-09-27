@@ -569,9 +569,6 @@ img.fft-gif-small,
   border-color: #89221A;
   color: var(--fft-paper);
 }
-.fft-category-number::before {
-  content: counter(fft-category, decimal-leading-zero);
-}
 .fft-category-number::before { content: counter(fft-category, decimal-leading-zero); }
 .fft-category-title,
 .fft-category-title h2 {
