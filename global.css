@@ -16,10 +16,10 @@
   --fft-line: #bdbcb6;
   --fft-ink: #111;
   --fft-muted: #6d6d68;
-  --accent-group1: #a9526d; /* Closed Petals â€” rose fanÃ© */
-  --accent-group2: #8065aa; /* Shy Blossom â€” mauve */
-  --accent-group3: #347b76; /* Wildflower â€” vert bleutÃ© */
-  --accent-group4: #92702f; /* Faded Bloom â€” ocre ancien */
+  --accent-group1: #3b0a12; /* Closed Petals */
+  --accent-group2: #76151d; /* Shy Blossom */
+  --accent-group3: #800020; /* Wildflower */
+  --accent-group4: #9b1d30; /* Faded Bloom */
 }
 
 :root[data-color-scheme="dark"] {
@@ -50,7 +50,7 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   font-size: var(--normal-size);
 }
 
-/* Balise de grand titre : <t1>â€¦</t1> */
+/* Balise de grand titre : <t1>…</t1> */
 :is(t1, t1g1, t1g2, t1g3, t1g4) {
   margin: 10px 0 13px;
   display: block;
@@ -59,7 +59,7 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   letter-spacing: -.045em;
 }
 
-/* Balise de grand titre manuscrit : <t2>â€¦</t2> */
+/* Balise de grand titre manuscrit : <t2>…</t2> */
 :is(t2, t2g1, t2g2, t2g3, t2g4) {
   margin: 10px 0 13px;
   display: block;
@@ -68,7 +68,7 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   letter-spacing: -.045em;
 }
 
-/* Balise de petit libellÃ© gras : <b1>â€¦</b1> */
+/* Balise de petit libellé gras : <b1>…</b1> */
 :is(b1, b1g1, b1g2, b1g3, b1g4) {
   margin: 0 0 4px;
   color: var(--fft-muted);
@@ -78,7 +78,7 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   text-transform: uppercase;
 }
 
-/* Balise dâ€™Ã©tiquette encadrÃ©e : <b2>â€¦</b2> */
+/* Balise d’étiquette encadrée : <b2>…</b2> */
 :is(b2, b2g1, b2g2, b2g3, b2g4) {
   padding: 4px 8px;
   display: inline-block;
@@ -90,7 +90,7 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   text-transform: uppercase;
 }
 
-/* Balise de libellÃ© gras en ligne : <b3>â€¦</b3> */
+/* Balise de libellé gras en ligne : <b3>…</b3> */
 b3 {
   color: var(--fft-ink);
   font-size: 10px;
@@ -99,7 +99,7 @@ b3 {
   text-transform: uppercase;
 }
 
-/* Balise dâ€™Ã©tiquette pleine : <b4>â€¦</b4> */
+/* Balise d’étiquette pleine : <b4>…</b4> */
 :is(b4, b4g1, b4g2, b4g3, b4g4) {
   padding: 4px 8px;
   display: inline-block;
@@ -112,18 +112,18 @@ b3 {
   text-transform: uppercase;
 }
 
-/* Balise de graisse forte : <b5>â€¦</b5> */
+/* Balise de graisse forte : <b5>…</b5> */
 :is(b5, b5g1, b5g2, b5g3, b5g4) {
   font-weight: 900;
 }
 
-/* Balise de soulignement en aplat : <u1>â€¦</u1> */
+/* Balise de soulignement en aplat : <u1>…</u1> */
 :is(u1, u1g1, u1g2, u1g3, u1g4) {
   text-decoration: none !important;
   box-shadow: inset 0 -.5em var(--fft-line);
 }
 
-/* Balise de police sÃ©rif : <f1>â€¦</f1> */
+/* Balise de police sérif : <f1>…</f1> */
 :is(f1, f1g1, f1g2, f1g3, f1g4) {
   font-family: "Cormorant Garamond", serif;
 }
@@ -149,7 +149,7 @@ u1g2 { box-shadow: inset 0 -.5em var(--accent-group2); }
 u1g3 { box-shadow: inset 0 -.5em var(--accent-group3); }
 u1g4 { box-shadow: inset 0 -.5em var(--accent-group4); }
 
-/* Ã‰lÃ©ments visuels rÃ©utilisables dans les fiches et posts RP */
+/* Éléments visuels réutilisables dans les fiches et posts RP */
 .fft-post-visuals {
   --fft-icon-size: 86px;
   width: 100%;
@@ -219,7 +219,7 @@ img.fft-gif-small,
   }
 }
 
-/* CARNET DE BORD â€” GARDE-ROBE */
+/* CARNET DE BORD — GARDE-ROBE */
 .fft-wardrobe {
   width: min(570px, 100%);
   margin: 28px auto;
@@ -709,7 +709,7 @@ img.fft-gif-small,
 
 .sidebar { z-index: 100; }
 
-/* Sujets Ã©pinglÃ©s */
+/* Sujets épinglés */
 #bookmark-button-open {
   width: 45px;
   height: 45px;
@@ -778,7 +778,7 @@ img.fft-gif-small,
   text-transform: none;
 }
 #bookmark-popover h1::before {
-  content: "Ã‰PINGLES";
+  content: "ÉPINGLES";
   margin-bottom: 10px;
   display: block;
   color: var(--fft-muted);
@@ -794,7 +794,7 @@ img.fft-gif-small,
   scrollbar-width: thin;
 }
 #bookmark-list:empty::before {
-  content: "Aucun sujet Ã©pinglÃ© pour le moment.";
+  content: "Aucun sujet épinglé pour le moment.";
   padding: 24px 0;
   display: block;
   border-top: 1px solid var(--fft-line);
@@ -1360,7 +1360,7 @@ img.avatar-preview {
   #fft-profile-view .profile_infos { padding: 22px 18px; }
 }
 
-/* Fiche de prÃ©sentation */
+/* Fiche de présentation */
 .fft-pres {
   width: min(720px, 100%);
   margin: 24px auto;
@@ -1545,7 +1545,7 @@ img.avatar-preview {
   .fft-pres-player { padding: 26px 24px; grid-template-columns: 1fr; gap: 8px; }
 }
 
-/* Fiche de prÃ©sentation â€” composition Ã©ditoriale */
+/* Fiche de présentation — composition éditoriale */
 .fft-intro {
   width: min(680px, 100%);
   margin: 24px auto;
@@ -1715,7 +1715,7 @@ img.avatar-preview {
   font: italic 500 18px/1.15 "Cormorant Garamond", serif;
 }
 .fft-intro-qa dt::before {
-  content: "0" counter(fft-question) " â€” ";
+  content: "0" counter(fft-question) " — ";
   color: var(--fft-muted);
   font-size: 12px;
 }
@@ -1742,7 +1742,7 @@ img.avatar-preview {
   .fft-intro-section { padding: 26px 22px; }
 }
 
-/* Fiche de prÃ©sentation â€” Flowers From a Tomb */
+/* Fiche de présentation — Flowers From a Tomb */
 .fft-dossier {
   width: min(700px, 100%);
   margin: 28px auto;
@@ -1943,7 +1943,7 @@ img.avatar-preview {
   .fft-dossier-questions div { grid-template-columns: 1fr; gap: 7px; }
 }
 
-/* ModÃ¨le universel de prÃ©-liens */
+/* Modèle universel de pré-liens */
 .fft-prelinks {
   width: min(620px, 100%);
   margin: 20px auto;
@@ -2344,7 +2344,7 @@ img.avatar-preview {
   text-transform: uppercase;
 }
 .fft-admin-meta span + span::before {
-  content: "â€”";
+  content: "—";
   margin-right: 20px;
   color: var(--fft-line);
 }
@@ -2391,7 +2391,7 @@ img.avatar-preview {
   color: var(--fft-muted);
 }
 .fft-admin-list li::before {
-  content: "âœ¦";
+  content: "✦";
   color: var(--fft-ink);
   text-align: center;
 }
@@ -2509,7 +2509,7 @@ img.avatar-preview {
   }
 }
 
-/* Variantes LS â€” fiches administratives */
+/* Variantes LS — fiches administratives */
 .fft-admin-variant {
   width: min(680px, 100%);
   margin: 30px auto;
@@ -2537,7 +2537,7 @@ img.avatar-preview {
 }
 .fft-admin-copy strong { color: var(--fft-ink); }
 
-/* 01 â€” Ã©ditoriale */
+/* 01 — éditoriale */
 .fft-admin-editorial {
   display: grid;
   grid-template-columns: 84px minmax(0, 1fr);
@@ -2572,7 +2572,7 @@ img.avatar-preview {
   border-top: 1px solid var(--fft-line);
 }
 
-/* 02 â€” bulletin */
+/* 02 — bulletin */
 .fft-admin-bulletin { border-color: var(--fft-ink); }
 .fft-admin-bulletin-head {
   padding: 27px 32px;
@@ -2611,7 +2611,7 @@ img.avatar-preview {
   text-transform: uppercase;
 }
 
-/* 03 â€” split moodboard */
+/* 03 — split moodboard */
 .fft-admin-split {
   min-height: 460px;
   display: grid;
@@ -2650,7 +2650,7 @@ img.avatar-preview {
   overflow: auto;
 }
 
-/* 04 â€” couverture panoramique */
+/* 04 — couverture panoramique */
 .fft-admin-cover { overflow: hidden; }
 .fft-admin-cover-visual {
   height: 270px;
@@ -2696,7 +2696,7 @@ img.avatar-preview {
   column-rule: 1px solid var(--fft-line);
 }
 
-/* 05 â€” lettre */
+/* 05 — lettre */
 .fft-admin-letter {
   width: min(570px, 100%);
   padding: 52px 54px 45px;
@@ -2733,7 +2733,7 @@ img.avatar-preview {
   text-align: right;
 }
 
-/* 06 â€” affiche collage */
+/* 06 — affiche collage */
 .fft-admin-poster {
   padding: 18px;
   background: var(--fft-panel);
@@ -2802,7 +2802,7 @@ img.avatar-preview {
   .fft-admin-poster-gif { max-width: 100% !important; }
 }
 
-/* Variantes LS â€” posts RP */
+/* Variantes LS — posts RP */
 .fft-rp {
   width: min(680px, 100%);
   margin: 30px auto;
@@ -2836,7 +2836,7 @@ img.avatar-preview {
   white-space: pre-line;
 }
 
-/* RP 01 â€” marge illustrÃ©e */
+/* RP 01 — marge illustrée */
 .fft-rp-margin {
   display: grid;
   grid-template-columns: 90px minmax(0, 1fr);
@@ -2867,7 +2867,7 @@ img.avatar-preview {
   border-bottom: 1px solid var(--fft-line);
 }
 
-/* RP 02 â€” cinÃ©ma */
+/* RP 02 — cinéma */
 .fft-rp-cinema { overflow: hidden; }
 .fft-rp-cinema-cover {
   height: 285px;
@@ -2896,7 +2896,7 @@ img.avatar-preview {
 .fft-rp-cinema-head .fft-rp-author { color: #f3f2ee; }
 .fft-rp-cinema-copy { padding: 35px 40px 42px; }
 
-/* RP 03 â€” moodboard latÃ©ral */
+/* RP 03 — moodboard latéral */
 .fft-rp-board {
   padding: 22px;
   display: grid;
@@ -2927,7 +2927,7 @@ img.avatar-preview {
 .fft-rp-board-main { padding: 17px 17px 22px 0; }
 .fft-rp-board-head { margin-bottom: 27px; }
 
-/* RP 04 â€” portrait et lettre */
+/* RP 04 — portrait et lettre */
 .fft-rp-letter {
   width: min(590px, 100%);
   padding: 55px 52px 46px;
@@ -2961,7 +2961,7 @@ img.avatar-preview {
   font: italic 500 18px/1.4 "Cormorant Garamond", serif;
 }
 
-/* RP 05 â€” gif et cartouche */
+/* RP 05 — gif et cartouche */
 .fft-rp-frame { padding: 19px; background: var(--fft-panel); }
 .fft-rp-frame-inner {
   padding: 34px 36px 40px;
@@ -4434,7 +4434,7 @@ body form.fft-members-filter {
   text-transform: uppercase;
   transition: color .25s ease, background-color .25s ease, border-color .25s ease;
 }
-.fft-member-contact a:after { content: "Message privÃ©"; }
+.fft-member-contact a:after { content: "Message privé"; }
 .fft-member-contact img[src="https://2img.net/i/fa/modernbb/icon_contact_pm.png"] {
   display: none;
 }
@@ -4636,7 +4636,7 @@ body .page-actions:not(form) #mark_read:hover {
   transition: color .24s ease, border-color .24s ease, background-color .24s ease;
 }
 .fft-topic-go-last a::before {
-  content: "â†—";
+  content: "↗";
   font: 600 12px / 1 var(--font);
 }
 .fft-topic-go-last a:hover {
@@ -4737,7 +4737,7 @@ body .page-actions:not(form) #mark_read:hover {
 .fft-forum-page .fft-topic-avatar { border-color: var(--fft-line); }
 .fft-forum-page .fft-topic-avatar { background: var(--transparent); }
 
-/* Actions et modÃ©ration des sujets */
+/* Actions et modération des sujets */
 body .page-actions .buttons { gap: 8px; }
 body .page-actions .button,
 body .page-actions button,
@@ -4882,7 +4882,7 @@ body .page-actions .button.primary:hover {
   }
 }
 
-/* Direction finale viewforum â€” continuitÃ© directe de l'index */
+/* Direction finale viewforum — continuité directe de l'index */
 .fft-viewforum {
   margin-top: 34px;
   color: var(--fft-ink);
@@ -5051,7 +5051,7 @@ body .page-actions .button.primary:hover {
   .fft-viewforum .fft-topic-avatar { display: none; }
 }
 
-/* Sujets importants â€” notes et annonces compactes */
+/* Sujets importants — notes et annonces compactes */
 .fft-viewforum .fft-topic:is([class*="sticky"], [class*="announce"], [class*="global"]) {
   height: 56px;
   min-height: 56px;
@@ -5499,18 +5499,16 @@ body .page-actions .button.primary:hover {
 
 
 .navigation_links a {
-
   font-size: var(--normal-size);
-
-  &:not(:first-of-type):before {
-
-    content: ">";
-    font-size: var(--nomal-size);
-    margin-right: 5px;
-  }
 }
 
-/* BOTTIN DES MÃ‰TIERS â€” SUJET EN ONGLETS */
+.navigation_links a:not(:first-of-type)::before {
+  content: ">";
+  font-size: var(--normal-size);
+  margin-right: 5px;
+}
+
+/* BOTTIN DES MÉTIERS — SUJET EN ONGLETS */
 .page-tab {
   display: grid;
   grid-template-columns: 190px minmax(0, 1fr);
@@ -5691,7 +5689,7 @@ body .page-actions .button.primary:hover {
   }
 }
 
-/* CALENDRIER Dâ€™ELMSBURY â€” SAISONS */
+/* CALENDRIER D’ELMSBURY — SAISONS */
 .fft-calendar-tabs {
   display: flex;
   flex-direction: column;
@@ -5825,7 +5823,7 @@ body .page-actions .button.primary:hover {
   }
 }
 
-/* SOULMATE SEARCHER â€” PROFIL DE RENCONTRE RÃ‰TRO */
+/* SOULMATE SEARCHER — PROFIL DE RENCONTRE RÉTRO */
 .fft-soulmate {
   width: min(760px, 100%);
   margin: 30px auto;
@@ -6042,7 +6040,7 @@ body .page-actions .button.primary:hover {
   .fft-soulmate-footer span { display: block; }
 }
 
-/* SOULMATE SEARCHER â€” NOTIFICATION */
+/* SOULMATE SEARCHER — NOTIFICATION */
 .fft-soulmate-notification {
   width: min(470px, 100%);
   margin: 24px auto;
@@ -6098,7 +6096,7 @@ body .page-actions .button.primary:hover {
   }
 }
 
-/* CARNET DE BORD â€” LISTE DE LIENS */
+/* CARNET DE BORD — LISTE DE LIENS */
 .fft-relationships {
   width: min(620px, 100%);
   margin: 28px auto;
@@ -6218,7 +6216,7 @@ body .page-actions .button.primary:hover {
   }
 }
 
-/* CARNET DE BORD â€” HOME TOUR */
+/* CARNET DE BORD — HOME TOUR */
 .fft-home-tour {
   width: min(680px, 100%);
   margin: 28px auto;
@@ -6379,7 +6377,7 @@ body .page-actions .button.primary:hover {
   .fft-home-tour-room figcaption > div { padding: 12px; }
 }
 
-/* CARNET DE BORD â€” THÃˆME ASTRAL */
+/* CARNET DE BORD — THÈME ASTRAL */
 .fft-astro {
   width: min(680px, 100%);
   margin: 28px auto;
@@ -6524,7 +6522,7 @@ body .page-actions .button.primary:hover {
   .fft-astro-placements div:last-child { border-bottom: 0; }
 }
 
-/* PAGE ACTIVITÃ‰ â€” DISCOVER */
+/* PAGE ACTIVITÉ — DISCOVER */
 .fft-discover {
   width: 100%;
   margin: 34px 0 0;
@@ -6682,7 +6680,7 @@ img.act-icon {
   text-transform: uppercase;
 }
 
-/* MYSPACE â€” PROFIL, PUBLICATIONS ET INTERACTIONS */
+/* MYSPACE — PROFIL, PUBLICATIONS ET INTERACTIONS */
 .fft-myspace-profile,
 .fft-myspace-post,
 .fft-myspace-like,
@@ -6931,7 +6929,7 @@ img.act-icon {
   .fft-discover-time { grid-column: 2; justify-self: start; }
 }
 
-/****** BLOGS â€” CONVERSATIONS SMS ******/
+/****** BLOGS — CONVERSATIONS SMS ******/
 
 /* Liste des conversations */
 .fft-sms-inbox {
@@ -6944,7 +6942,7 @@ img.act-icon {
 .fft-sms-inbox .fft-topic:has(.fft-sms-topic-type:not(:empty)) { display: none; }
 .fft-sms-inbox .topic_separator { display: none; }
 
-/* TÃ©lÃ©phone */
+/* Téléphone */
 .fft-sms-phone {
   width: min(680px, 100%);
   height: auto;
@@ -7103,7 +7101,7 @@ img.act-icon {
 .fft-sms-hidden,
 .fft-sms-empty { padding: 20px; color: var(--fft-muted); text-align: center; }
 
-/* Pagination et rÃ©ponse rapide */
+/* Pagination et réponse rapide */
 .fft-sms-pagination { padding: 8px 16px; border-top: 1px solid var(--fft-line); text-align: center; display: none; }
 .fft-sms-compose {
   padding: 12px 14px;
