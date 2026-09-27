@@ -17,9 +17,9 @@
   --fft-ink: #111;
   --fft-muted: #6d6d68;
   --accent-group1: #5C101B; /* Closed Petals */
-  --accent-group2: #76151d; /* Shy Blossom */
-  --accent-group3: #800020; /* Wildflower */
-  --accent-group4: #9b1d30; /* Faded Bloom */
+  --accent-group2: #811B37; /* Shy Blossom */
+  --accent-group3: #CEB27E; /* Wildflower */
+  --accent-group4: #DCC8A3; /* Faded Bloom */
 }
 
 :root[data-color-scheme="dark"] {
