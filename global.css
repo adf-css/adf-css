@@ -8776,10 +8776,6 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
   }
 }
 
-html[data-color-scheme="dark"] .main_forum {
-  background: #111111 !important;
-}
-
 .adf2-global-nav {
   position: relative;
   z-index: 100;
