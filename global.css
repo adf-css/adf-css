@@ -16468,3 +16468,27 @@ html body .sidebar #notiffi_button .unread_count {
     flex-wrap: wrap;
   }
 }
+
+:root,
+:root[data-color-scheme="light"] {
+  --adf-background: url("https://i.ibb.co/wrWv9ZNK/1.png");
+}
+
+:root[data-color-scheme="dark"] {
+  --adf-background: url("https://i.ibb.co/3yghrNKW/6.png");
+}
+
+body {
+  background-color: var(--body);
+  background-image: var(--adf-background);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+}
