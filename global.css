@@ -16492,3 +16492,7 @@ body {
     background-attachment: scroll;
   }
 }
+
+html body .main_forum {
+  background: transparent !important;
+}
