@@ -7790,7 +7790,7 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 /* ===========================================================
    ADF V2 — AJOUTS VALIDÉS / MIGRATION OCTOBRE 2026
    Profil, QEEL, header, sidebar, recherche, blog
-   CSS SMS conservé à part pour tests.
+   SMS intégré lors de la migration du 10 octobre 2026.
    =========================================================== */
 /* ADF V2 — DISCOVER : DATES COMPACTES */
 .adf2-discover .adf2-discover-date{
@@ -10930,4 +10930,2399 @@ html[data-color-scheme="dark"] .sidebar_bottom .theme-toggle .light {
   .adf2-blog-heading h2 {
     font-size: 23px;
   }
+}
+
+/* ========================================================================
+   ADF V2 — MODULES MIGRÉS DEPUIS LE CSS INTERNE (10 OCTOBRE 2026)
+
+   Private Line / responsive global / sondages / mentions / Writing Room.
+   Conserver ce bloc après les anciens styles afin de préserver la cascade.
+   ======================================================================== */
+
+/* ==========================================================
+   01 — THE PRIVATE LINE / CONVERSATION
+   ========================================================== */
+
+.adf2-sms-phone {
+  --sms-bg: var(--fft-paper, #f6f3ed);
+  --sms-panel: var(--fft-panel, #e9e4db);
+  --sms-line: var(--fft-line, #d8d2c6);
+  --sms-ink: var(--fft-ink, #171717);
+  --sms-muted: var(--fft-muted, #777);
+  --sms-dark: #292929;
+  --sms-dark-text: #f8f8f8;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 800px);
+  max-width: 800px;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none;
+  margin: 28px auto 40px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--sms-line);
+  border-radius: 0;
+  background: var(--sms-bg);
+  color: var(--sms-ink);
+  box-shadow: none;
+}
+
+.adf2-sms-phone *, .adf2-sms-phone *::before, .adf2-sms-phone *::after { box-sizing: border-box; }
+
+/* En-tête */
+
+.adf2-sms-phone .adf2-sms-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 84px;
+  height: auto;
+  padding: 15px 22px;
+  border: 0;
+  border-bottom: 1px solid var(--sms-line);
+  border-radius: 0;
+  background: var(--sms-panel);
+  color: var(--sms-ink);
+  box-shadow: none;
+}
+
+.adf2-sms-phone .adf2-sms-contact { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-width: 0; text-align: center; }
+.adf2-sms-overline { color: var(--sms-muted); font: 600 9px/1.4 "Inter", Arial, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; }
+.adf2-sms-phone .adf2-sms-contact strong { display: block; max-width: 100%; color: var(--sms-ink); font: 500 26px/1.1 "Cormorant Garamond", Georgia, serif; text-transform: none; overflow-wrap: anywhere; }
+.adf2-sms-phone .adf2-sms-contact > span:last-child { margin-top: 1px; color: var(--sms-muted); font: 600 9px/1.4 "Inter", Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+.adf2-sms-phone .adf2-sms-back, .adf2-sms-phone .adf2-sms-reply { display: grid; place-items: center; width: 36px; height: 36px; min-width: 36px; min-height: 36px; padding: 0; border: 1px solid var(--sms-line); border-radius: 50%; background: transparent; color: var(--sms-ink); text-decoration: none; box-shadow: none; transition: background .2s ease; }
+.adf2-sms-phone .adf2-sms-back:hover, .adf2-sms-phone .adf2-sms-reply:hover { background: var(--sms-bg); }
+.adf2-sms-phone .adf2-sms-back i, .adf2-sms-phone .adf2-sms-reply i { font-size: 17px; line-height: 1; }
+
+/* Fil de discussion */
+
+.adf2-sms-phone .adf2-sms-thread {
+  display: flex;
+  flex: 0 0 auto !important;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  width: 100%;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: 540px !important;
+  margin: 0;
+  padding: 26px 28px 30px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 0;
+  background: var(--sms-bg);
+  scrollbar-width: thin;
+}
+
+.adf2-sms-thread .adf2-sms-message { position: relative; display: block; flex: 0 0 auto; width: 100%; max-width: none; min-height: 0; height: auto; margin: 0; padding: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.adf2-sms-thread .adf2-sms-line { display: flex; flex-direction: row; align-items: flex-end; justify-content: flex-start; gap: 10px; width: 100%; min-height: 0; margin: 0; padding: 0; }
+.adf2-sms-thread .adf2-sms-avatar { display: block; flex: 0 0 34px; width: 34px; height: 34px; min-width: 34px; min-height: 34px; margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 50%; background: var(--sms-panel); }
+.adf2-sms-thread .adf2-sms-avatar img { display: block; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; border-radius: 50%; filter: grayscale(100%); }
+.adf2-sms-thread .adf2-sms-copy { display: flex; flex: 0 1 auto; flex-direction: column; align-items: flex-start; gap: 6px; width: auto; max-width: min(74%, 490px); min-width: 0; margin: 0; padding: 0; }
+.adf2-sms-thread .adf2-sms-meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 5px 10px; width: 100%; min-height: 0; margin: 0; padding: 0 4px; border: 0; background: transparent; text-align: left; }
+.adf2-sms-thread .adf2-sms-name { color: var(--sms-ink); font: 700 10px/1.4 "Inter", Arial, sans-serif; letter-spacing: .6px; text-transform: uppercase; }
+.adf2-sms-thread .adf2-sms-name a { color: inherit; text-decoration: none; }
+.adf2-sms-thread .adf2-sms-meta time { color: var(--sms-muted); font: 500 9px/1.4 "Inter", Arial, sans-serif; }
+.adf2-sms-thread .adf2-sms-bubble { display: block; width: fit-content; max-width: 100%; min-width: 0; height: auto; margin: 0; padding: 12px 16px; border: 1px solid var(--sms-line); border-radius: 18px 18px 18px 4px; background: var(--sms-panel); color: var(--sms-ink); box-shadow: none; font: 400 12px/1.65 "Inter", Arial, sans-serif; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+.adf2-sms-thread .adf2-sms-bubble > :first-child { margin-top: 0; }
+.adf2-sms-thread .adf2-sms-bubble > :last-child { margin-bottom: 0; }
+.adf2-sms-thread .adf2-sms-bubble p { margin: 0 0 8px; }
+.adf2-sms-thread .adf2-sms-bubble p:last-child { margin-bottom: 0; }
+.adf2-sms-thread .adf2-sms-bubble img, .adf2-sms-thread .adf2-sms-bubble video, .adf2-sms-thread .adf2-sms-bubble iframe { max-width: 100%; }
+.adf2-sms-thread .adf2-sms-bubble img { height: auto; }
+
+/* Alignement final validé : conserver la priorité sur les anciens styles fft-* */
+
+.adf2-sms-thread .adf2-sms-message.adf2-sms-incoming .adf2-sms-line { display: flex !important; flex-direction: row !important; justify-content: flex-start !important; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-incoming .adf2-sms-copy { margin-left: 0 !important; margin-right: auto !important; align-items: flex-start !important; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-incoming .adf2-sms-meta { justify-content: flex-start; text-align: left; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-incoming .adf2-sms-bubble { margin-left: 0 !important; margin-right: 0 !important; background: var(--sms-panel) !important; color: var(--sms-ink) !important; border-color: var(--sms-line) !important; border-radius: 18px 18px 18px 4px !important; }
+
+.adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-line { display: flex !important; flex-direction: row-reverse !important; justify-content: flex-start !important; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-copy { margin-left: auto !important; margin-right: 0 !important; align-items: flex-end !important; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-meta { justify-content: flex-end; text-align: right; }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-bubble { border-color: var(--sms-dark); border-radius: 18px 18px 4px 18px; background: var(--sms-dark); color: var(--sms-dark-text); }
+.adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-bubble a { color: #fff; }
+
+/* Messages successifs du même auteur */
+
+.adf2-sms-thread .adf2-sms-message.is-grouped { margin-top: -7px; }
+.adf2-sms-thread .adf2-sms-message.is-grouped .adf2-sms-avatar { visibility: hidden; }
+.adf2-sms-thread .adf2-sms-message.is-grouped .adf2-sms-meta { display: none; }
+
+/* Commandes natives masquées visuellement */
+
+.adf2-sms-thread .adf2-sms-tools, .adf2-sms-thread .edition-buttons, .adf2-sms-thread .adf2-sms-likes, .adf2-sms-thread .rep-button { display: none !important; }
+.adf2-sms-phone .fft-sms-hidden { display: none; }
+.adf2-sms-phone .adf2-sms-empty { padding: 28px 16px; color: var(--sms-muted); font: italic 21px/1.4 "Cormorant Garamond", Georgia, serif; text-align: center; }
+.adf2-sms-phone .adf2-sms-pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; width: 100%; height: auto; margin: 0; padding: 13px 16px; border: 0; border-top: 1px solid var(--sms-line); border-radius: 0; background: var(--sms-panel); }
+.adf2-sms-actions { display: none !important; }
+
+/* Éditeur rapide SCEditor */
+
+.adf2-sms-phone .adf2-sms-compose { position: relative; display: block; flex: 0 0 auto; width: 100%; min-height: 0; height: auto; margin: 0; padding: 16px 20px 20px; overflow: visible; border: 0; border-top: 1px solid var(--sms-line); border-radius: 0; background: var(--sms-bg); }
+.adf2-sms-compose #quick_reply { position: relative; display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 100%; margin: 0 !important; }
+.adf2-sms-compose textarea, .adf2-sms-compose .sceditor-container { max-width: 100%; }
+.adf2-sms-compose .sceditor-container { display: flex !important; flex-direction: column; width: 100% !important; height: auto !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden; border: 1px solid var(--sms-line) !important; border-radius: 20px !important; background: var(--sms-panel) !important; box-shadow: none !important; }
+.adf2-sms-compose .sceditor-toolbar { order: 2; width: 100%; margin: 0 !important; padding: 7px !important; border-top: 1px solid var(--sms-line) !important; border-bottom: 0 !important; background: var(--sms-panel) !important; }
+.adf2-sms-compose .sceditor-container > textarea, .adf2-sms-compose .sceditor-container > iframe { order: 1; display: block; width: 100% !important; height: 76px !important; min-height: 76px !important; margin: 0 !important; padding: 13px 17px !important; border: 0 !important; border-radius: 0 !important; background: var(--sms-bg) !important; color: var(--sms-ink) !important; box-shadow: none !important; resize: vertical; }
+.adf2-sms-compose input[name="preview"] { display: none !important; }
+.adf2-sms-compose input[name="post"] { align-self: flex-end; min-width: 110px; min-height: 38px; padding: 10px 17px; border: 0; border-radius: 20px; background: var(--sms-ink); color: var(--sms-bg); font: 600 11px/1 "Inter", Arial, sans-serif; cursor: pointer; }
+.adf2-sms-compose .fft-editor-tags-toggle { font-size: 10px; letter-spacing: .03em; }
+
+/* Bouton rond d'envoi DM */
+
+.adf2-dm-ready { position: relative; }
+.adf2-dm-ready .adf2-dm-send { position: absolute; right: 12px; top: 86px; z-index: 5; display: grid; place-items: center; width: 35px; height: 35px; padding: 0; border: 0; border-radius: 50%; background: #292929; color: #fff; cursor: pointer; }
+.adf2-dm-ready .adf2-dm-send i { font-size: 16px; }
+.adf2-dm-ready .adf2-dm-send:hover { background: #555; }
+.adf2-dm-ready input[name="post"] { display: none !important; }
+
+/* Mode sombre Edison */
+
+html[data-color-scheme="dark"] .adf2-sms-phone { --sms-dark: #454545; --sms-dark-text: #f7f7f7; }
+html[data-color-scheme="dark"] .adf2-sms-thread .adf2-sms-message.adf2-sms-incoming .adf2-sms-bubble { background: #272727 !important; border-color: #393939 !important; color: #f7f7f7 !important; }
+html[data-color-scheme="dark"] .adf2-sms-thread .adf2-sms-message.adf2-sms-outgoing .adf2-sms-bubble { background: #454545; border-color: #555; color: #fff; }
+html[data-color-scheme="dark"] .adf2-sms-compose input[name="post"] { background: #e7e7e7; color: #171717; }
+html[data-color-scheme="dark"] .adf2-dm-ready .adf2-dm-send { background: #e7e7e7; color: #171717; }
+
+/* SMS sur petit écran */
+
+@media screen and (max-width: 650px) {
+  .adf2-sms-phone { width: 100%; margin: 18px auto 28px; }
+  .adf2-sms-phone .adf2-sms-header { grid-template-columns: 34px minmax(0, 1fr) 34px; min-height: 76px; padding: 12px 14px; gap: 8px; }
+  .adf2-sms-phone .adf2-sms-contact strong { font-size: 22px; }
+  .adf2-sms-overline { font-size: 8px; }
+  .adf2-sms-phone .adf2-sms-thread { padding: 20px 13px 24px; gap: 13px; }
+  .adf2-sms-thread .adf2-sms-copy { max-width: calc(100% - 45px); }
+  .adf2-sms-thread .adf2-sms-avatar { flex-basis: 29px; width: 29px; height: 29px; min-width: 29px; min-height: 29px; }
+  .adf2-sms-thread .adf2-sms-bubble { padding: 11px 13px; font-size: 11px; }
+  .adf2-sms-phone .adf2-sms-compose { padding: 12px; }
+  .adf2-sms-compose .sceditor-container > textarea, .adf2-sms-compose .sceditor-container > iframe { height: 70px !important; min-height: 70px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adf2-sms-phone *, .adf2-sms-phone *::before, .adf2-sms-phone *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+
+
+/* ==========================================================
+   02 — ADF V2 / RESPONSIVE MOBILE
+   Menu, sidebar, largeur des pages, accueil et footer
+   ========================================================== */
+
+@media screen and (max-width: 767px) {
+
+  /* Structure générale */
+
+  .main_forum { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+
+  .main_forum #page-body, .main_forum #page-footer { width: 100% !important; max-width: 100% !important; min-width: 0 !important; margin-left: 0 !important; margin-right: 0 !important; box-sizing: border-box !important; }
+
+  .main_forum #page-body { padding: 12px !important; }
+  .main_forum #page-header { width: 100% !important; max-width: 100% !important; margin: 0 !important; box-sizing: border-box !important; }
+  .main_forum #page-header img { max-width: 100% !important; height: auto !important; }
+  body { padding-bottom: 70px !important; }
+
+  /* Accueil */
+
+  #page-body .adf2-home { width: 100% !important; max-width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+  .adf2-home .adf2-shortcuts { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 6px !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
+  .adf2-home .adf2-shortcuts a { min-width: 0 !important; white-space: normal !important; overflow-wrap: anywhere; }
+  .adf2-home .adf2-overview, .adf2-home .adf2-wanted-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; min-width: 0 !important; }
+  .adf2-home .adf2-overview > * { grid-column: 1 / -1 !important; min-width: 0 !important; }
+  .adf2-home img { max-width: 100%; height: auto; }
+
+  /* Navigation supérieure */
+
+  .main_forum .fft-navbar { position: sticky !important; top: 0 !important; z-index: 1000 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; height: 54px !important; margin: 0 !important; padding: 0 16px !important; box-sizing: border-box !important; background: #111 !important; }
+
+  .fft-navbar .fft-logo { display: inline-flex !important; align-items: center !important; flex: 0 0 auto !important; color: #fff !important; }
+
+  /* Bouton menu */
+
+  .fft-navbar .adf2-mobile-menu { display: flex !important; align-items: center !important; justify-content: center !important; gap: 9px !important; width: auto !important; height: 38px !important; padding: 0 10px !important; border: 1px solid #3a3a3a !important; border-radius: 0 !important; background: transparent !important; color: #fff !important; font: 600 10px/1 "Inter", Arial, sans-serif !important; letter-spacing: 1px !important; text-transform: uppercase !important; cursor: pointer; }
+
+  .adf2-mobile-menu i { font-size: 19px; }
+
+  /* Menu fermé */
+
+  .fft-navbar .fft-navlinks { position: absolute !important; top: 100% !important; left: 0 !important; right: 0 !important; z-index: 1001 !important; display: none !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; height: auto !important; max-height: calc(100dvh - 125px) !important; margin: 0 !important; padding: 14px !important; overflow-y: auto !important; box-sizing: border-box !important; background: #171717 !important; border-bottom: 1px solid #3a3a3a !important; box-shadow: 0 12px 20px rgba(0,0,0,.18); }
+
+  /* Menu ouvert */
+
+  .fft-navbar.adf2-mobile-menu-open .fft-navlinks { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 7px !important; }
+
+  .fft-navbar.adf2-mobile-menu-open .fft-navlinks > a { position: static !important; display: flex !important; align-items: center !important; justify-content: center !important; min-width: 0 !important; width: 100% !important; height: 44px !important; margin: 0 !important; padding: 8px !important; box-sizing: border-box !important; visibility: visible !important; opacity: 1 !important; transform: none !important; pointer-events: auto !important; background: #202020 !important; border: 1px solid #383838 !important; color: #f5f5f5 !important; font: 600 10px/1.3 "Inter", Arial, sans-serif !important; letter-spacing: .5px !important; text-align: center !important; text-transform: uppercase !important; white-space: normal !important; }
+
+  .fft-navbar .fft-navlinks > a:hover { background: #303030 !important; }
+
+  /* Sidebar horizontale en bas de l'écran */
+
+  .main_forum .sidebar, body > .sidebar { position: fixed !important; top: auto !important; bottom: 0 !important; left: 0 !important; right: 0 !important; z-index: 999 !important; display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; gap: 8px !important; width: 100% !important; min-width: 0 !important; max-width: 100% !important; height: 62px !important; min-height: 0 !important; margin: 0 !important; padding: 7px 12px !important; box-sizing: border-box !important; transform: none !important; background: var(--fft-paper, #f3f2ee) !important; border-top: 1px solid var(--fft-line, #ccc) !important; border-right: 0 !important; }
+
+  .sidebar .sidebar_top, .sidebar .sidebar_bottom { position: static !important; display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: flex-start !important; gap: 7px !important; width: auto !important; height: auto !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; }
+
+  .sidebar .sidebar_top { flex: 1 1 auto !important; min-width: 0 !important; overflow: hidden !important; }
+  .sidebar .sidebar_bottom { flex: 0 0 auto !important; }
+
+  /* Switcheroo */
+
+  .sidebar #switcheroo { display: flex !important; flex-direction: row !important; align-items: center !important; flex: 0 1 auto !important; min-width: 0 !important; max-width: 52vw !important; height: auto !important; overflow-x: auto !important; overflow-y: hidden !important; scrollbar-width: none; }
+  .sidebar #switcheroo .switcheroo__squircles { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 5px !important; }
+  .sidebar #switcheroo::-webkit-scrollbar { display: none; }
+
+  /* Notifications, favoris et changement de thème */
+
+  .sidebar #notiffi_button, .sidebar #bookmark-button-open, .sidebar .theme-toggle { position: relative !important; flex: 0 0 34px !important; width: 34px !important; height: 34px !important; min-width: 34px !important; margin: 0 !important; }
+
+  /* Anciennes décorations verticales de la sidebar */
+
+  .adf2-sidebar::before, .adf2-sidebar::after,
+  .adf2-sidebar .sidebar_top::before, .adf2-sidebar .sidebar_top::after,
+  .adf2-sidebar .sidebar_bottom::before, .adf2-sidebar .sidebar_bottom::after,
+  .adf2-sidebar #switcheroo::before, .adf2-sidebar #switcheroo::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Footer : correction du débordement de 1076 px */
+
+  .main_forum #page-footer { display: flex !important; flex-direction: column !important; align-items: stretch !important; grid-template-columns: none !important; gap: 12px !important; padding: 18px 12px !important; }
+
+  #page-footer > .u-center, #page-footer #bottom { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; }
+
+  #page-footer #bottom > div { display: block !important; width: 100% !important; max-width: 100% !important; min-width: 0 !important; text-align: center !important; white-space: normal !important; overflow-wrap: anywhere; }
+
+  #page-footer a { max-width: 100%; white-space: normal !important; overflow-wrap: anywhere; }
+}
+
+/* Bouton mobile masqué sur ordinateur */
+
+@media screen and (min-width: 768px) {
+  .adf2-mobile-menu { display: none !important; }
+}
+
+/* ============================================
+   ADF V2 — THE BALLOT
+   Template : viewtopic_poll_ballot
+   ============================================ */
+
+.adf2-poll-form {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 20px auto;
+}
+
+.adf2-poll-form *,
+.adf2-poll-form *::before,
+.adf2-poll-form *::after {
+  box-sizing: border-box;
+}
+
+/* CONTENEUR */
+
+.adf2-poll-form .adf2-poll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--fft-line, #bdbcb6);
+  border-radius: 0;
+  background: var(--fft-paper, #f3f2ee);
+  color: var(--fft-ink, #111);
+  box-shadow: none;
+}
+
+/* EN-TÊTE */
+
+.adf2-poll .adf2-poll-head {
+  display: block;
+  margin: 0;
+  padding: 25px 28px 0;
+  border: 0;
+  background: var(--fft-paper, #f3f2ee);
+}
+
+.adf2-poll-overline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 27px;
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adf2-poll-heading-text {
+  min-width: 0;
+}
+
+.adf2-poll-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--fft-muted, #777);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.adf2-poll .adf2-poll-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--fft-ink, #111);
+  font: 500 clamp(25px, 4vw, 37px)/1.15 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.5px;
+  text-align: left;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.adf2-poll-symbol {
+  flex: 0 0 auto;
+  color: var(--fft-muted, #777);
+  font-size: 38px;
+  line-height: 1;
+  opacity: .6;
+}
+
+.adf2-poll-head-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 27px;
+  padding: 13px 0;
+  border-top: 1px solid var(--fft-line, #bdbcb6);
+}
+
+.adf2-poll-instruction {
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-head-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.adf2-poll-expiry {
+  color: var(--fft-muted, #777);
+  font-size: 10px;
+}
+
+.adf2-poll-expiry:empty,
+.adf2-poll-close:empty {
+  display: none;
+}
+
+.adf2-poll-close a {
+  color: var(--fft-ink, #111);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* LISTE DES OPTIONS */
+
+.adf2-poll .adf2-poll-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 20px 28px 28px;
+  border: 0;
+}
+
+.adf2-poll-legend {
+  padding: 0;
+  margin-bottom: 12px;
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-poll .adf2-poll-choice {
+  display: grid !important;
+  grid-template-columns: 22px minmax(0, 1fr) 17px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 55px;
+  margin: 0 !important;
+  padding: 13px 15px;
+  border: 1px solid var(--fft-line, #bdbcb6);
+  border-radius: 0;
+  background: var(--fft-paper, #f3f2ee);
+  color: var(--fft-ink, #111);
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.adf2-poll .adf2-poll-choice:hover {
+  background: var(--fft-panel, #e2e1dc);
+}
+
+.adf2-poll .adf2-poll-vote {
+  position: static !important;
+  float: none !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.adf2-poll .adf2-poll-vote input {
+  display: inline-block !important;
+  position: static !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  appearance: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  accent-color: var(--fft-ink, #111);
+  cursor: pointer;
+}
+
+.adf2-poll .adf2-poll-caption {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--fft-ink, #111);
+  font: 500 12px/1.65 "Inter", Arial, sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.adf2-poll-choice-mark {
+  color: var(--fft-muted, #777);
+  font-size: 15px;
+  text-align: right;
+  opacity: .45;
+  transition: opacity .2s ease;
+}
+
+.adf2-poll .adf2-poll-choice:hover .adf2-poll-choice-mark {
+  opacity: 1;
+}
+
+/* OPTION SÉLECTIONNÉE */
+
+.adf2-poll .adf2-poll-choice:has(input:checked) {
+  border-color: var(--fft-ink, #111);
+  background: var(--fft-panel, #e2e1dc);
+}
+
+.adf2-poll .adf2-poll-choice:has(input:checked) .adf2-poll-choice-mark {
+  color: var(--fft-ink, #111);
+  opacity: 1;
+}
+
+/* ZONE D'ACTIONS */
+
+.adf2-poll .adf2-poll-actions {
+  display: block;
+  margin: 0;
+  padding: 18px 28px;
+  border-top: 1px solid var(--fft-line, #bdbcb6);
+  background: var(--fft-panel, #e2e1dc);
+}
+
+.adf2-poll-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 17px;
+  color: var(--fft-muted, #777);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.adf2-poll-warning > span:first-child {
+  flex: 0 0 auto;
+  font-size: 15px;
+}
+
+.adf2-poll-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adf2-poll-actions-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.adf2-poll-actions-info > span {
+  color: var(--fft-ink, #111);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+}
+
+.adf2-poll-actions-info small {
+  color: var(--fft-muted, #777);
+  font: italic 16px/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-poll-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.adf2-poll-results-link {
+  color: var(--fft-ink, #111);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.adf2-poll .adf2-poll-submit {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 135px;
+  min-height: 42px;
+  margin: 0;
+  padding: 12px 18px;
+  border: 1px solid var(--fft-ink, #111);
+  border-radius: 0;
+  background: var(--fft-ink, #111);
+  color: var(--fft-paper, #f3f2ee);
+  box-shadow: none;
+  font: 600 11px/1.3 "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.adf2-poll .adf2-poll-submit:hover {
+  opacity: .8;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-poll .adf2-poll-head {
+    padding: 20px 17px 0;
+  }
+
+  .adf2-poll-overline {
+    margin-bottom: 22px;
+  }
+
+  .adf2-poll-symbol {
+    font-size: 26px;
+  }
+
+  .adf2-poll .adf2-poll-fieldset {
+    padding: 16px 17px 22px;
+  }
+
+  .adf2-poll .adf2-poll-choice {
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .adf2-poll .adf2-poll-actions {
+    padding: 17px;
+  }
+
+  .adf2-poll-actions-row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .adf2-poll-buttons {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .adf2-poll .adf2-poll-submit {
+    min-width: 120px;
+  }
+
+}
+
+/* ==========================================================
+   ADF V2 — THE BALLOT / RESULTS
+   Template : viewtopic_poll_result
+
+   Complément du CSS viewtopic_poll_ballot
+   ========================================================== */
+
+
+/* CONTENEUR DES RÉSULTATS */
+
+.adf2-poll-results-view .adf2-poll-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 20px 28px 28px;
+}
+
+
+/* INTRODUCTION */
+
+.adf2-poll-results-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* CARTE D'UN RÉSULTAT */
+
+.adf2-poll-results-view .adf2-poll-result {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  margin: 0 !important;
+  padding: 18px 20px;
+  border: 1px solid var(--fft-line, #bdbcb6);
+  border-radius: 0;
+  background: var(--fft-paper, #f3f2ee);
+  color: var(--fft-ink, #111);
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+
+/* NOM ET POURCENTAGE */
+
+.adf2-poll-result-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 17px;
+}
+
+.adf2-poll-results-view .adf2-poll-result-name {
+  display: block;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--fft-ink, #111);
+  font: 500 13px/1.5 "Inter", Arial, sans-serif;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.adf2-poll-result-percent {
+  display: block;
+  flex: 0 0 auto;
+  color: var(--fft-ink, #111);
+  font: 500 27px/1 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+}
+
+
+/* BARRE DE PROGRESSION */
+
+.adf2-poll-results-view .adf2-poll-result-track {
+  position: relative !important;
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 5px !important;
+  min-height: 5px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--fft-line, #bdbcb6) !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+.adf2-poll-result-fill {
+  display: block;
+  width: 0;
+  max-width: 100%;
+  height: 100%;
+  min-height: 5px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--fft-ink, #111);
+}
+
+
+/* NOMBRE DE VOTES */
+
+.adf2-poll-result-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.adf2-poll-result-count > span {
+  color: var(--fft-muted, #777);
+  font: 500 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-result-count > strong {
+  color: var(--fft-ink, #111);
+  font: 600 11px/1.4 "Inter", Arial, sans-serif;
+}
+
+
+/* LISTE DES VOTANTS PUBLICS */
+
+.adf2-poll-result-voters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--fft-line, #bdbcb6);
+}
+
+.adf2-poll-voters-label {
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-results-view .adf2-poll-voters-list {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--fft-muted, #777);
+  font: 400 11px/1.7 "Inter", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.adf2-poll-voters-list a {
+  color: var(--fft-ink, #111);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ==========================================================
+   RÉCAPITULATIF / TOTAL DES VOTES
+   ========================================================== */
+
+.adf2-poll-results-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+}
+
+.adf2-poll-results-summary-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.adf2-poll-results-summary-text > span {
+  color: var(--fft-ink, #111);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-results-summary-text > small {
+  color: var(--fft-muted, #777);
+  font: italic 17px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-poll-results-summary-count {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adf2-poll-results-summary-count > span {
+  color: var(--fft-muted, #777);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .5px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.adf2-poll-results-summary-count > strong {
+  color: var(--fft-ink, #111);
+  font: 500 35px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* ==========================================================
+   ANNULER SON VOTE / REVENIR AU VOTE
+   ========================================================== */
+
+.adf2-poll-results-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.adf2-poll-results-links:empty {
+  display: none;
+}
+
+.adf2-poll-result-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--fft-line, #bdbcb6);
+  border-radius: 0;
+  background: transparent;
+  color: var(--fft-ink, #111);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease;
+}
+
+.adf2-poll-result-link:hover {
+  background: var(--fft-paper, #f3f2ee);
+  color: var(--fft-ink, #111);
+}
+
+.adf2-poll-back-link {
+  border-color: var(--fft-ink, #111);
+  background: var(--fft-ink, #111);
+  color: var(--fft-paper, #f3f2ee);
+}
+
+.adf2-poll-back-link:hover {
+  background: var(--fft-ink, #111);
+  color: var(--fft-paper, #f3f2ee);
+  opacity: .8;
+}
+
+
+/* LISTE GLOBALE DES VOTANTS */
+
+.adf2-poll-all-voters {
+  min-width: 0;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--fft-line, #bdbcb6);
+  color: var(--fft-muted, #777);
+  font: 400 10px/1.7 "Inter", Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.adf2-poll-all-voters:empty {
+  display: none;
+}
+
+.adf2-poll-all-voters a {
+  color: var(--fft-ink, #111);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* MESSAGE SI LES RÉSULTATS SONT MASQUÉS */
+
+.adf2-poll-hide-message {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--fft-line, #bdbcb6);
+  background: var(--fft-paper, #f3f2ee);
+  color: var(--fft-muted, #777);
+  font: 500 11px/1.6 "Inter", Arial, sans-serif;
+  text-align: center;
+}
+
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-poll-results-view .adf2-poll-results-list {
+    padding: 16px 17px 22px;
+    gap: 8px;
+  }
+
+  .adf2-poll-results-view .adf2-poll-result {
+    padding: 15px 14px;
+  }
+
+  .adf2-poll-result-heading {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .adf2-poll-results-view .adf2-poll-result-name {
+    font-size: 12px;
+  }
+
+  .adf2-poll-result-percent {
+    font-size: 24px;
+  }
+
+  .adf2-poll-results-summary {
+    align-items: flex-start;
+  }
+
+  .adf2-poll-results-summary-count {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .adf2-poll-results-summary-count > strong {
+    font-size: 30px;
+  }
+
+  .adf2-poll-results-links {
+    justify-content: stretch;
+    gap: 8px;
+  }
+
+  .adf2-poll-results-links > a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+}
+
+/* ==========================================================
+   ADF V2 — THE MEMBER CARD
+   Template : mentions_tooltip
+   ========================================================== */
+
+/* CONTENEUR */
+
+.main-tooltip.adf2-mention-card {
+  --mention-bg: var(--fft-paper, #f3f2ee);
+  --mention-panel: var(--fft-panel, #e9e4db);
+  --mention-line: var(--fft-line, #d8d2c6);
+  --mention-ink: var(--fft-ink, #171717);
+  --mention-muted: var(--fft-muted, #777);
+
+  width: min(365px, calc(100vw - 24px)) !important;
+  max-width: calc(100vw - 24px) !important;
+  min-width: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0;
+  padding: 0 !important;
+  border: 1px solid var(--mention-line) !important;
+  border-radius: 0 !important;
+  background: var(--mention-bg) !important;
+  color: var(--mention-ink);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .12) !important;
+  box-sizing: border-box;
+}
+
+.adf2-mention-card *,
+.adf2-mention-card *::before,
+.adf2-mention-card *::after {
+  box-sizing: border-box;
+}
+
+/* EN-TÊTE */
+
+.adf2-mention-card .adf2-mention-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 35px;
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--mention-line);
+  background: var(--mention-bg);
+  color: var(--mention-muted);
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-mention-header span:last-child {
+  text-align: right;
+}
+
+/* CONTENU */
+
+.adf2-mention-card .adf2-mention-content {
+  display: grid !important;
+  grid-template-columns: 105px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 15px;
+  width: 100%;
+  min-width: 0;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 15px !important;
+  border: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+/* PHOTOGRAPHIE */
+
+.adf2-mention-card .adf2-mention-portrait {
+  position: relative;
+  display: block;
+  width: 105px;
+  min-width: 0;
+  min-height: 153px;
+  overflow: hidden;
+  background: var(--mention-panel);
+}
+
+.adf2-mention-card .preview_avatar {
+  position: absolute !important;
+  inset: 0;
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+}
+
+.adf2-mention-portrait-label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  padding: 8px;
+  background: rgba(15, 15, 15, .72);
+  color: #fff;
+  font: 600 8px/1.3 "Inter", Arial, sans-serif;
+  letter-spacing: 1.2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* INFORMATIONS */
+
+.adf2-mention-card .adf2-mention-infos {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 15px;
+  float: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.adf2-mention-card .adf2-mention-user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 2px 0 0;
+  text-align: left;
+}
+
+.adf2-mention-eyebrow {
+  display: block;
+  color: var(--mention-muted);
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .65px;
+  text-transform: uppercase;
+}
+
+.adf2-mention-card .adf2-mention-pseudo {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font: 500 27px/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.35px;
+  text-align: left;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.adf2-mention-pseudo a {
+  font: inherit;
+  text-decoration: none;
+}
+
+.adf2-mention-pseudo a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.adf2-mention-card .adf2-mention-rank {
+  display: block;
+  max-width: 100%;
+  margin-top: 2px;
+  color: var(--mention-muted);
+  font: 500 9px/1.5 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+/* ACTIONS */
+
+.adf2-mention-card .adf2-mention-contacts {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 5px;
+  float: none !important;
+  width: 100% !important;
+  min-width: 0;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* SUIVRE LE MEMBRE */
+
+.adf2-mention-card .adf2-mention-follow {
+  display: flex !important;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100% !important;
+  min-width: 0;
+  min-height: 31px;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 8px !important;
+  border: 1px solid var(--mention-ink) !important;
+  border-radius: 0 !important;
+  background: var(--mention-ink) !important;
+  color: var(--mention-bg) !important;
+  font: 600 9px/1.3 "Inter", Arial, sans-serif !important;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  white-space: normal;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.adf2-mention-card .adf2-mention-follow:hover {
+  opacity: .8;
+}
+
+/* PROFIL / MP / MESSAGES */
+
+.adf2-mention-card .adf2-mention-link {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-width: 0;
+  min-height: 30px;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 7px 3px !important;
+  border: 1px solid var(--mention-line) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--mention-ink) !important;
+  font: 600 8px/1.4 "Inter", Arial, sans-serif !important;
+  letter-spacing: .15px;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  white-space: normal;
+  box-shadow: none !important;
+  transition: background .2s ease;
+}
+
+.adf2-mention-card .adf2-mention-link:hover {
+  background: var(--mention-panel) !important;
+}
+
+/* SIGNATURE */
+
+.adf2-mention-card .adf2-mention-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 32px;
+  margin: 0;
+  padding: 8px 14px;
+  border-top: 1px solid var(--mention-line);
+  background: var(--mention-panel);
+  color: var(--mention-muted);
+}
+
+.adf2-mention-footer span:first-child {
+  font: italic 15px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-mention-footer span:last-child {
+  color: var(--mention-ink);
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* MODE SOMBRE */
+
+html[data-color-scheme="dark"] .adf2-mention-card {
+  --mention-bg: #1c1c1c;
+  --mention-panel: #292929;
+  --mention-line: #404040;
+  --mention-ink: #f1f1f1;
+  --mention-muted: #aaa;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 767px) {
+
+  .main-tooltip.adf2-mention-card {
+    width: min(345px, calc(100vw - 20px)) !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .adf2-mention-card .adf2-mention-content {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px !important;
+  }
+
+  .adf2-mention-card .adf2-mention-portrait {
+    width: 90px;
+    min-height: 145px;
+  }
+
+  .adf2-mention-card .adf2-mention-pseudo {
+    font-size: 24px;
+  }
+
+  .adf2-mention-card .adf2-mention-header {
+    padding: 9px 12px;
+  }
+
+  .adf2-mention-card .adf2-mention-footer {
+    padding: 8px 12px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adf2-mention-card *,
+  .adf2-mention-card *::before,
+  .adf2-mention-card *::after {
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================================
+   ADF V2 — MEMBER CARD / TOOLTIPSTER
+   Correction de la largeur native Forumactif
+   ========================================================== */
+
+/* Agrandir uniquement les infobulles de mentions ADF */
+
+.tooltipster-base:has(.adf2-mention-card) {
+  width: 365px !important;
+  max-width: calc(100vw - 24px) !important;
+  box-sizing: border-box !important;
+}
+
+/* Adapter le conteneur natif */
+
+.tooltipster-base:has(.adf2-mention-card) > .tooltipster-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Faire correspondre notre carte au conteneur */
+
+.tooltipster-base .main-tooltip.adf2-mention-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Largeur adaptée au téléphone */
+
+@media screen and (max-width: 767px) {
+  .tooltipster-base:has(.adf2-mention-card) {
+    width: min(345px, calc(100vw - 20px)) !important;
+  }
+}
+
+/* ==========================================================
+   ADF V2 — THE WRITING ROOM
+   Template : posting_body
+   ========================================================== */
+
+/* VARIABLES LOCALES */
+
+.adf2-posting {
+  --writing-bg: var(--fft-paper, #f6f3ed);
+  --writing-panel: var(--fft-panel, #e9e4db);
+  --writing-line: var(--fft-line, #d8d2c6);
+  --writing-ink: var(--fft-ink, #171717);
+  --writing-muted: var(--fft-muted, #777);
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  color: var(--writing-ink);
+}
+
+.adf2-posting *,
+.adf2-posting *::before,
+.adf2-posting *::after {
+  box-sizing: border-box;
+}
+
+.adf2-posting form[name="post"] {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.adf2-posting .adf2-posting-shell {
+  width: 100%;
+  max-width: 1140px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   EN-TÊTE ÉDITORIAL
+   ========================================================== */
+
+.adf2-posting-hero {
+  margin: 0 0 25px;
+  padding: 25px 0 28px;
+  border-bottom: 1px solid var(--writing-line);
+}
+
+.adf2-posting-overline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  color: var(--writing-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-posting-hero-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adf2-posting-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--writing-muted);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.adf2-posting .adf2-posting-title {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--writing-ink);
+  font: 500 clamp(34px, 5vw, 56px)/1 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -1px;
+  text-transform: none;
+  text-align: left;
+}
+
+.adf2-posting-hero-main p {
+  margin: 12px 0 0;
+  color: var(--writing-muted);
+  font: italic 20px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-posting-hero-mark {
+  flex: 0 0 auto;
+  color: var(--writing-muted);
+  font-size: 55px;
+  line-height: 1;
+  opacity: .65;
+}
+
+
+/* ==========================================================
+   PRÉVISUALISATION
+   ========================================================== */
+
+.adf2-posting-preview {
+  width: 100%;
+  min-width: 0;
+}
+
+.adf2-posting-preview:empty {
+  display: none;
+}
+
+
+/* ==========================================================
+   TITRES DE SECTIONS
+   ========================================================== */
+
+.adf2-posting-section-head {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--writing-line);
+}
+
+.adf2-posting-section-head > span,
+.adf2-posting-editor-head > div > span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--writing-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-posting-section-head h2,
+.adf2-posting-section-head h3,
+.adf2-posting-editor-head h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--writing-ink);
+  font: 500 34px/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.5px;
+  text-transform: none;
+}
+
+.adf2-posting-section-head p {
+  margin: 7px 0 0;
+  color: var(--writing-muted);
+  font: 400 11px/1.5 "Inter", Arial, sans-serif;
+}
+
+
+/* ==========================================================
+   RÈGLES ET AVERTISSEMENTS
+   ========================================================== */
+
+.adf2-posting #forum_rules {
+  display: block;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  box-shadow: none;
+}
+
+.adf2-posting-rules-content {
+  display: flow-root;
+  padding: 20px 24px;
+  color: var(--writing-ink);
+  font: 400 12px/1.8 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting-rules-content img {
+  max-width: 150px;
+  height: auto;
+  margin: 0 17px 10px 0;
+}
+
+.adf2-posting-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 16px 20px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-panel);
+}
+
+.adf2-posting-warning-icon {
+  display: grid;
+  flex: 0 0 23px;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border: 1px solid var(--writing-ink);
+  border-radius: 50%;
+  color: var(--writing-ink);
+  font: 700 12px/1 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting-warning p {
+  margin: 2px 0 0;
+  color: var(--writing-ink);
+  font: 500 11px/1.7 "Inter", Arial, sans-serif;
+}
+
+
+/* ==========================================================
+   PANNEAU PRINCIPAL
+   ========================================================== */
+
+.adf2-posting #postingbox {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  box-shadow: none;
+}
+
+.adf2-posting .adf2-posting-panel-head {
+  padding: 23px 28px;
+}
+
+.adf2-posting .adf2-posting-fields {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 26px 28px 28px;
+  border: 0;
+  background: transparent;
+}
+
+
+/* ==========================================================
+   CHAMPS DE FORMULAIRE
+   ========================================================== */
+
+.adf2-posting .adf2-posting-field {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 19px;
+}
+
+.adf2-posting .adf2-posting-field + .adf2-posting-field {
+  padding-top: 19px;
+  border-top: 1px solid var(--writing-line);
+}
+
+.adf2-posting .adf2-posting-field dt,
+.adf2-posting .adf2-posting-field dd {
+  float: none;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.adf2-posting .adf2-posting-field dt {
+  padding-top: 11px;
+}
+
+.adf2-posting-field dt label,
+.adf2-posting-field-label {
+  color: var(--writing-ink);
+  font: 600 10px/1.5 "Inter", Arial, sans-serif;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+}
+
+.adf2-posting #postingbox input.inputbox,
+.adf2-posting #postingbox select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 13px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  color: var(--writing-ink);
+  box-shadow: none;
+  font: 400 12px/1.5 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting #postingbox input.inputbox:focus,
+.adf2-posting #postingbox select:focus {
+  outline: 1px solid var(--writing-ink);
+  outline-offset: 1px;
+}
+
+.adf2-posting-subject-row,
+.adf2-posting-recipients {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.adf2-posting-subject-row input[name="subject"] {
+  flex: 1 1 260px;
+}
+
+.adf2-posting #postingbox .adf2-posting-subject-row select {
+  flex: 0 0 110px;
+  width: 110px;
+}
+
+.adf2-posting #postingbox .adf2-posting-recipients input[name="username[]"] {
+  flex: 1 1 155px;
+  width: auto;
+  max-width: 100%;
+}
+
+.adf2-posting #postingbox .adf2-posting-add-user,
+.adf2-posting #postingbox .adf2-posting-find-user {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 40px;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-panel);
+  color: var(--writing-ink);
+  box-shadow: none;
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* Type de sujet et icônes */
+
+.adf2-posting .type-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.adf2-posting .adf2-posting-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.adf2-posting-icon-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px;
+  border: 1px solid var(--writing-line);
+  cursor: pointer;
+}
+
+.adf2-posting-icon-choice img {
+  max-width: 35px;
+  max-height: 35px;
+  object-fit: contain;
+}
+
+.adf2-posting input[type="radio"],
+.adf2-posting input[type="checkbox"] {
+  accent-color: var(--writing-ink);
+}
+
+
+/* ==========================================================
+   EN-TÊTE DE L'ÉDITEUR
+   ========================================================== */
+
+.adf2-posting-editor-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0 17px;
+  padding-top: 25px;
+  border-top: 1px solid var(--writing-line);
+}
+
+.adf2-posting-editor-caption {
+  color: var(--writing-muted);
+  font: 600 9px/1.5 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   GRILLE ÉDITEUR + OUTILS
+   ========================================================== */
+
+.adf2-posting .adf2-posting-editor-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 220px !important;
+  align-items: start !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* ÉDITEUR PRINCIPAL */
+
+.adf2-posting #message-box {
+  display: block !important;
+  grid-column: 1;
+  grid-row: 1;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  box-sizing: border-box;
+}
+
+.adf2-posting #message-box .adf2-posting-help {
+  display: block;
+  float: none;
+  width: 100%;
+  min-height: 34px;
+  margin: 0;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--writing-line);
+  background: var(--writing-panel);
+}
+
+.adf2-posting #message-box .helpline {
+  display: block;
+  color: var(--writing-muted);
+  font: 400 10px/1.5 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting #textarea_content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.adf2-posting #text_editor_textarea {
+  display: block;
+  width: 100% !important;
+  min-height: 300px;
+  margin: 0 !important;
+  padding: 18px;
+  border: 0;
+  border-radius: 0;
+  background: var(--writing-bg);
+  color: var(--writing-ink);
+  font: 400 12px/1.8 "Inter", Arial, sans-serif;
+  resize: vertical;
+}
+
+/* SCEditor : conserver le fonctionnement natif */
+
+.adf2-posting #message-box .sceditor-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--writing-bg) !important;
+  box-shadow: none !important;
+}
+
+.adf2-posting #message-box .sceditor-toolbar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 2px;
+  padding: 10px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--writing-line) !important;
+  background: var(--writing-panel) !important;
+}
+
+.adf2-posting #message-box .sceditor-container > textarea,
+.adf2-posting #message-box .sceditor-container > iframe {
+  max-width: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: var(--writing-bg) !important;
+}
+
+
+/* ==========================================================
+   COLONNE D'OUTILS
+   ========================================================== */
+
+.adf2-posting .adf2-posting-tools {
+  display: flex !important;
+  grid-column: 2;
+  grid-row: 1;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.adf2-posting-tools-section {
+  min-width: 0;
+  border: 1px solid var(--writing-line);
+  background: var(--writing-panel);
+}
+
+.adf2-posting-tools-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--writing-line);
+}
+
+.adf2-posting-tools-heading > span {
+  color: var(--writing-muted);
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-posting-tools-heading strong {
+  color: var(--writing-ink);
+  font: 500 24px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-posting #smileyContainer {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  max-height: 250px;
+  margin: 0 !important;
+  padding: 12px !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.adf2-posting #smileyContainer img {
+  max-width: 100%;
+  height: auto;
+}
+
+.adf2-posting .adf2-posting-options {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 15px 14px !important;
+  border: 0;
+  background: transparent;
+}
+
+.adf2-posting-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  color: var(--writing-ink);
+  font: 400 10px/1.5 "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.adf2-posting-options input[type="checkbox"] {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin: 1px 0 0;
+}
+
+
+/* ==========================================================
+   OPTIONS SUPPLÉMENTAIRES / DÉS
+   ========================================================== */
+
+.adf2-posting .adf2-posting-extra {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 16px 0 0;
+  padding: 0;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+}
+
+.adf2-posting-extra summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 65px;
+  padding: 16px 22px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.adf2-posting-extra summary::-webkit-details-marker {
+  display: none;
+}
+
+.adf2-posting-extra summary > span:first-child {
+  color: var(--writing-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-posting-extra summary strong {
+  flex: 1 1 auto;
+  color: var(--writing-ink);
+  font: 500 24px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-posting-extra summary > span:last-child {
+  color: var(--writing-ink);
+  font-size: 19px;
+}
+
+.adf2-posting-extra[open] summary > span:last-child {
+  transform: rotate(45deg);
+}
+
+.adf2-posting-extra-content {
+  padding: 20px 22px;
+  border-top: 1px solid var(--writing-line);
+}
+
+.adf2-posting #list_dice {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adf2-posting #list_dice td {
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--writing-ink);
+  font: 400 11px/1.8 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting #list_dice select,
+.adf2-posting #list_dice input {
+  max-width: 100%;
+  margin: 4px;
+  padding: 7px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  color: var(--writing-ink);
+}
+
+.adf2-posting #list_dice #dice_to_del a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background: var(--writing-ink);
+  color: var(--writing-bg);
+  text-decoration: none;
+}
+
+
+/* ==========================================================
+   SONDAGE INTÉGRÉ
+   ========================================================== */
+
+.adf2-posting-pollbox {
+  width: 100%;
+  min-width: 0;
+  margin-top: 16px;
+}
+
+.adf2-posting-pollbox:empty {
+  display: none;
+}
+
+
+/* ==========================================================
+   ACTIONS DE PUBLICATION
+   ========================================================== */
+
+.adf2-posting .adf2-posting-submit {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+  margin: 16px 0 0;
+  padding: 22px 25px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-panel);
+  text-align: left;
+}
+
+.adf2-posting-submit-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.adf2-posting-submit-intro > span {
+  color: var(--writing-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-posting-submit-intro h2 {
+  margin: 0;
+  color: var(--writing-ink);
+  font: 500 29px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-posting-submit-intro p {
+  margin: 5px 0 0;
+  color: var(--writing-muted);
+  font: italic 16px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-posting-submit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.adf2-posting-submit-actions input[type="submit"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 100px;
+  min-height: 39px;
+  margin: 0;
+  padding: 11px 15px;
+  border: 1px solid var(--writing-line);
+  border-radius: 0;
+  background: var(--writing-bg);
+  color: var(--writing-ink);
+  box-shadow: none;
+  font: 600 10px/1.3 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.adf2-posting-submit-actions input.primary,
+.adf2-posting-submit-actions input[name="post"] {
+  border-color: var(--writing-ink);
+  background: var(--writing-ink);
+  color: var(--writing-bg);
+}
+
+.adf2-posting-submit-actions input[type="submit"]:hover {
+  opacity: .8;
+}
+
+.adf2-posting-submit-actions input:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.adf2-posting-submit-warning {
+  flex: 0 0 100%;
+  padding-top: 13px;
+  border-top: 1px solid var(--writing-line);
+  color: var(--writing-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* HISTORIQUE NATIF */
+
+.adf2-posting-review {
+  width: 100%;
+  max-width: 1140px;
+  min-width: 0;
+  margin: 25px auto 0;
+}
+
+.adf2-posting-review:empty {
+  display: none;
+}
+
+
+/* ==========================================================
+   MODE SOMBRE EDISON
+   ========================================================== */
+
+html[data-color-scheme="dark"] .adf2-posting {
+  --writing-bg: #1d1d1d;
+  --writing-panel: #292929;
+  --writing-line: #424242;
+  --writing-ink: #f0f0f0;
+  --writing-muted: #aaa;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================== */
+
+@media screen and (max-width: 950px) {
+
+  .adf2-posting .adf2-posting-editor-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .adf2-posting #message-box {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .adf2-posting .adf2-posting-tools {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start !important;
+  }
+
+  .adf2-posting-submit-intro {
+    flex: 1 1 200px;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-posting-hero {
+    padding: 17px 0 20px;
+    margin-bottom: 17px;
+  }
+
+  .adf2-posting-overline {
+    margin-bottom: 23px;
+    font-size: 8px;
+  }
+
+  .adf2-posting .adf2-posting-title {
+    font-size: 37px;
+  }
+
+  .adf2-posting-hero-mark {
+    font-size: 32px;
+  }
+
+  .adf2-posting-section-head,
+  .adf2-posting .adf2-posting-panel-head {
+    padding: 18px 16px;
+  }
+
+  .adf2-posting .adf2-posting-fields {
+    padding: 18px 14px 20px;
+  }
+
+  .adf2-posting .adf2-posting-field {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding-bottom: 15px;
+  }
+
+  .adf2-posting .adf2-posting-field + .adf2-posting-field {
+    padding-top: 15px;
+  }
+
+  .adf2-posting .adf2-posting-field dt {
+    padding-top: 0;
+  }
+
+  .adf2-posting-editor-head {
+    padding-top: 20px;
+  }
+
+  .adf2-posting-editor-head h2 {
+    font-size: 30px;
+  }
+
+  .adf2-posting .adf2-posting-tools {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adf2-posting #text_editor_textarea {
+    min-height: 240px;
+    padding: 12px;
+  }
+
+  .adf2-posting #message-box .sceditor-toolbar {
+    padding: 6px !important;
+  }
+
+  .adf2-posting .adf2-posting-submit {
+    padding: 18px 14px;
+    gap: 18px;
+  }
+
+  .adf2-posting-submit-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .adf2-posting-submit-actions input[type="submit"] {
+    flex: 1 1 115px;
+  }
+
+  .adf2-posting-rules-content {
+    padding: 16px;
+  }
+
+  .adf2-posting-extra summary {
+    flex-wrap: wrap;
+    padding: 14px;
+  }
+
+  .adf2-posting-extra-content {
+    padding: 14px;
+  }
+
 }
