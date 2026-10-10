@@ -13326,3 +13326,2435 @@ html[data-color-scheme="dark"] .adf2-posting {
   }
 
 }
+
+/* ==========================================================
+   ADF V2 — MODULES VALIDÉS / MIGRATION 02 — 10.10.2026
+   Ordre des correctifs conservé depuis le CSS interne
+   ========================================================== */
+
+/* ==========================================
+   ADF V2 — WRITING ROOM
+   EN-TÊTE PLUS COMPACT
+   ========================================== */
+
+.adf2-posting .adf2-posting-hero {
+  margin: 0 0 15px;
+  padding: 20px 25px 23px;
+  border: 1px solid var(--writing-line);
+  background: var(--writing-bg);
+}
+
+.adf2-posting .adf2-posting-overline {
+  margin-bottom: 19px;
+}
+
+.adf2-posting .adf2-posting-eyebrow {
+  display: none;
+}
+
+.adf2-posting .adf2-posting-title {
+  font-size: clamp(36px, 4vw, 47px);
+  line-height: 1.05;
+}
+
+.adf2-posting .adf2-posting-hero-main p {
+  margin-top: 7px;
+  font-size: 18px;
+}
+
+.adf2-posting .adf2-posting-hero-mark {
+  font-size: 32px;
+  opacity: .45;
+}
+
+/* Supprimer l'introduction redondante */
+
+.adf2-posting #postingbox .adf2-posting-panel-head {
+  display: none;
+}
+
+/* Rapprocher les champs du haut */
+
+.adf2-posting #postingbox .adf2-posting-fields {
+  padding-top: 20px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-posting .adf2-posting-hero {
+    padding: 17px;
+  }
+
+  .adf2-posting .adf2-posting-overline {
+    margin-bottom: 15px;
+  }
+
+  .adf2-posting .adf2-posting-title {
+    font-size: 36px;
+  }
+
+  .adf2-posting .adf2-posting-hero-mark {
+    font-size: 25px;
+  }
+
+}
+
+/* ==========================================================
+   ADF V2 — THE BALLOT BUILDER
+   Template : posting_poll_body
+   ========================================================== */
+
+.adf2-posting .adf2-poll-builder {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 16px 0 0;
+  padding: 0;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  border-radius: 0;
+  background: var(--writing-bg, var(--fft-paper));
+  color: var(--writing-ink, var(--fft-ink));
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.adf2-poll-builder *,
+.adf2-poll-builder *::before,
+.adf2-poll-builder *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   EN-TÊTE REPLIABLE
+   ========================================== */
+
+.adf2-posting .adf2-poll-builder-toggle {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  min-height: 78px;
+  margin: 0;
+  padding: 17px 24px;
+  cursor: pointer;
+  list-style: none;
+  background: transparent;
+}
+
+.adf2-poll-builder-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.adf2-poll-builder-number {
+  flex: 0 0 145px;
+  color: var(--writing-muted, var(--fft-muted));
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-builder-heading {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.adf2-poll-builder-heading strong {
+  display: block;
+  color: var(--writing-ink, var(--fft-ink));
+  font: 500 27px/1.1 "Cormorant Garamond", Georgia, serif;
+  text-transform: none;
+}
+
+.adf2-poll-builder-heading small {
+  display: block;
+  color: var(--writing-muted, var(--fft-muted));
+  font: italic 16px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-poll-builder-plus {
+  display: grid;
+  flex: 0 0 30px;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  color: var(--writing-ink, var(--fft-ink));
+  font: 400 20px/1 "Inter", Arial, sans-serif;
+  transition: transform .2s ease;
+}
+
+.adf2-poll-builder[open] .adf2-poll-builder-plus {
+  transform: rotate(45deg);
+}
+
+.adf2-poll-builder-toggle:hover {
+  background: var(--writing-panel, var(--fft-panel));
+}
+
+
+/* ==========================================
+   CONTENU DU PANNEAU
+   ========================================== */
+
+.adf2-poll-builder-body {
+  width: 100%;
+  min-width: 0;
+  border-top: 1px solid var(--writing-line, var(--fft-line));
+}
+
+.adf2-poll-builder-intro {
+  padding: 27px 28px 24px;
+  border-bottom: 1px solid var(--writing-line, var(--fft-line));
+  background: var(--writing-panel, var(--fft-panel));
+}
+
+.adf2-poll-builder-intro > span {
+  display: block;
+  margin-bottom: 11px;
+  color: var(--writing-muted, var(--fft-muted));
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-builder-intro h3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--writing-ink, var(--fft-ink));
+  font: 500 33px/1.05 "Cormorant Garamond", Georgia, serif;
+  text-transform: none;
+}
+
+.adf2-poll-builder-intro p {
+  margin: 7px 0 0;
+  color: var(--writing-muted, var(--fft-muted));
+  font: italic 17px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* ==========================================
+   STRUCTURE DES SECTIONS
+   ========================================== */
+
+.adf2-posting .adf2-poll-builder-fields {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.adf2-poll-builder-section {
+  width: 100%;
+  min-width: 0;
+  padding: 25px 28px;
+}
+
+.adf2-poll-builder-section + .adf2-poll-builder-section {
+  border-top: 1px solid var(--writing-line, var(--fft-line));
+}
+
+.adf2-poll-builder-section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.adf2-poll-builder-section-title > span {
+  color: var(--writing-muted, var(--fft-muted));
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-builder-section-title > strong {
+  color: var(--writing-ink, var(--fft-ink));
+  font: 500 24px/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* ==========================================
+   CHAMPS DE SAISIE
+   ========================================== */
+
+.adf2-posting .adf2-poll-builder-field {
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.adf2-posting .adf2-poll-builder-field + .adf2-poll-builder-field {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--writing-line, var(--fft-line));
+}
+
+.adf2-posting .adf2-poll-builder-field dt,
+.adf2-posting .adf2-poll-builder-field dd {
+  float: none;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.adf2-posting .adf2-poll-builder-field dt {
+  padding-top: 10px;
+}
+
+.adf2-poll-builder-field dt label,
+.adf2-poll-builder-label {
+  display: block;
+  color: var(--writing-ink, var(--fft-ink));
+  font: 600 10px/1.5 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-builder-hint {
+  display: block;
+  margin-top: 7px;
+  color: var(--writing-muted, var(--fft-muted));
+  font: 400 10px/1.6 "Inter", Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.adf2-posting .adf2-poll-builder input.inputbox,
+.adf2-posting .adf2-poll-builder textarea.inputbox,
+.adf2-posting .adf2-poll-builder input.tiny {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  border-radius: 0;
+  background: var(--writing-bg, var(--fft-paper));
+  color: var(--writing-ink, var(--fft-ink));
+  box-shadow: none;
+  font: 400 12px/1.6 "Inter", Arial, sans-serif;
+}
+
+.adf2-posting .adf2-poll-builder textarea.inputbox {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.adf2-posting .adf2-poll-builder input:focus-visible,
+.adf2-posting .adf2-poll-builder textarea:focus-visible {
+  outline: 1px solid var(--writing-ink, var(--fft-ink));
+  outline-offset: 2px;
+}
+
+/* Ajouter ou supprimer une réponse */
+
+.adf2-poll-builder-input-action {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.adf2-poll-builder-input-action > input.inputbox {
+  flex: 1 1 220px;
+}
+
+.adf2-posting .adf2-poll-builder-secondary {
+  flex: 0 0 auto;
+  width: auto;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  border-radius: 0;
+  background: var(--writing-panel, var(--fft-panel));
+  color: var(--writing-ink, var(--fft-ink));
+  box-shadow: none;
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.adf2-poll-builder-secondary:hover {
+  opacity: .75;
+}
+
+
+/* ==========================================
+   DURÉE DU SONDAGE
+   ========================================== */
+
+.adf2-poll-builder-duration {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adf2-posting .adf2-poll-builder-duration input.tiny {
+  flex: 0 0 75px;
+  width: 75px;
+}
+
+.adf2-poll-builder-duration > span {
+  color: var(--writing-muted, var(--fft-muted));
+  font: 500 11px/1.4 "Inter", Arial, sans-serif;
+}
+
+
+/* ==========================================
+   CHOIX RADIO
+   ========================================== */
+
+.adf2-poll-builder-choices {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-width: 0;
+}
+
+.adf2-poll-builder-choices label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  min-height: 39px;
+  margin: 0;
+  padding: 9px 13px;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  background: var(--writing-bg, var(--fft-paper));
+  color: var(--writing-ink, var(--fft-ink));
+  font: 500 11px/1.4 "Inter", Arial, sans-serif;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.adf2-poll-builder-choices input[type="radio"] {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--writing-ink, var(--fft-ink));
+}
+
+.adf2-poll-builder-choices label:has(input:checked) {
+  border-color: var(--writing-ink, var(--fft-ink));
+  background: var(--writing-panel, var(--fft-panel));
+}
+
+.adf2-poll-builder-choices label:hover {
+  background: var(--writing-panel, var(--fft-panel));
+}
+
+.adf2-poll-builder-choices-wide label {
+  flex: 0 1 auto;
+}
+
+
+/* ==========================================
+   SUPPRESSION DU SONDAGE
+   ========================================== */
+
+.adf2-poll-builder-delete {
+  color: var(--writing-ink, var(--fft-ink));
+}
+
+.adf2-poll-builder-delete-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 39px;
+  padding: 9px 13px;
+  border: 1px solid var(--writing-line, var(--fft-line));
+  font: 500 11px/1.4 "Inter", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.adf2-poll-builder-delete-choice input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--writing-ink, var(--fft-ink));
+}
+
+
+/* ==========================================
+   SIGNATURE INFÉRIEURE
+   ========================================== */
+
+.adf2-poll-builder-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 15px 28px;
+  border-top: 1px solid var(--writing-line, var(--fft-line));
+  background: var(--writing-panel, var(--fft-panel));
+}
+
+.adf2-poll-builder-footer > span {
+  color: var(--writing-muted, var(--fft-muted));
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-poll-builder-footer > em {
+  color: var(--writing-muted, var(--fft-muted));
+  font: italic 17px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* ==========================================
+   RESPONSIVE MOBILE
+   ========================================== */
+
+@media screen and (max-width: 767px) {
+
+  .adf2-posting .adf2-poll-builder-toggle {
+    gap: 12px;
+    min-height: 70px;
+    padding: 14px 16px;
+  }
+
+  .adf2-poll-builder-number {
+    flex-basis: 80px;
+    font-size: 8px;
+  }
+
+  .adf2-poll-builder-heading strong {
+    font-size: 22px;
+  }
+
+  .adf2-poll-builder-heading small {
+    font-size: 14px;
+  }
+
+  .adf2-poll-builder-intro {
+    padding: 20px 16px;
+  }
+
+  .adf2-poll-builder-intro h3 {
+    font-size: 29px;
+  }
+
+  .adf2-poll-builder-section {
+    padding: 20px 16px;
+  }
+
+  .adf2-posting .adf2-poll-builder-field {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .adf2-posting .adf2-poll-builder-field dt {
+    padding-top: 0;
+  }
+
+  .adf2-poll-builder-section-title {
+    margin-bottom: 18px;
+  }
+
+  .adf2-poll-builder-footer {
+    padding: 14px 16px;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+
+  .adf2-poll-builder-number {
+    flex-basis: 66px;
+  }
+
+  .adf2-poll-builder-plus {
+    flex-basis: 26px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .adf2-poll-builder-input-action > input.inputbox {
+    flex-basis: 100%;
+  }
+
+  .adf2-posting .adf2-poll-builder-secondary {
+    width: 100%;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adf2-poll-builder *,
+  .adf2-poll-builder *::before,
+  .adf2-poll-builder *::after {
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   ADF V2 — ÉPINGLES / RESPONSIVE MOBILE
+   ========================================== */
+
+#bookmark-popover .adf2-bookmark-close {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+  /* Fenêtre plus petite que l'écran */
+
+  #bookmark-popover .popover,
+  #bookmark-popover:popover-open .popover {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    height: calc(100dvh - 96px - env(safe-area-inset-bottom)) !important;
+    max-height: calc(100dvh - 96px - env(safe-area-inset-bottom)) !important;
+    min-height: 0 !important;
+    padding: 58px 18px 18px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border: 1px solid var(--fft-line) !important;
+    background: var(--fft-paper) !important;
+  }
+
+  /* Croix de fermeture */
+
+  #bookmark-popover .popover > .adf2-bookmark-close {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    z-index: 10 !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    border: 1px solid var(--fft-line) !important;
+    border-radius: 0 !important;
+    background: var(--fft-panel) !important;
+    color: var(--fft-ink) !important;
+    font: 400 24px/1 "Inter", Arial, sans-serif !important;
+    cursor: pointer;
+  }
+
+  #bookmark-popover .adf2-bookmark-close:hover {
+    background: var(--fft-line) !important;
+  }
+
+  /* Titre du panneau */
+
+  #bookmark-popover h1 {
+    flex: 0 0 auto;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    padding-right: 32px;
+    font-size: 34px;
+  }
+
+  /* Liste défilante */
+
+  #bookmark-popover x-bookmark-list {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin-bottom: 12px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #bookmark-popover x-bookmark-button {
+    flex: 0 0 auto;
+  }
+}
+
+/* ==========================================================
+   ADF V2 — THE PREVIEW
+   Template : posting_preview
+   ========================================================== */
+
+/* CONTENEUR PRINCIPAL */
+
+.adf2-posting #preview.adf2-preview {
+  --preview-bg: var(--writing-bg, var(--fft-paper, #f3f2ee));
+  --preview-panel: var(--writing-panel, var(--fft-panel, #e2e1dc));
+  --preview-line: var(--writing-line, var(--fft-line, #bdbcb6));
+  --preview-ink: var(--writing-ink, var(--fft-ink, #111));
+  --preview-muted: var(--writing-muted, var(--fft-muted, #777));
+
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 0 24px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 1px solid var(--preview-line) !important;
+  border-radius: 0 !important;
+  background: var(--preview-bg) !important;
+  color: var(--preview-ink);
+  box-shadow: none !important;
+}
+
+.adf2-preview *,
+.adf2-preview *::before,
+.adf2-preview *::after {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   EN-TÊTE
+   ========================================================== */
+
+.adf2-posting #preview .adf2-preview-header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  min-height: 105px;
+  margin: 0 !important;
+  padding: 22px 26px !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--preview-line) !important;
+  border-radius: 0;
+  background: var(--preview-panel) !important;
+  color: var(--preview-ink);
+}
+
+.adf2-preview-heading {
+  min-width: 0;
+}
+
+.adf2-preview-overline {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--preview-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-posting #preview .adf2-preview-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--preview-ink);
+  font: 500 35px/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.5px;
+  text-transform: none;
+}
+
+.adf2-preview-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid var(--preview-line);
+  color: var(--preview-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+.adf2-preview-status-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--preview-ink);
+}
+
+
+/* ==========================================================
+   DISPOSITION DU MESSAGE
+   ========================================================== */
+
+.adf2-preview-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ==========================================================
+   PROFIL
+   ========================================================== */
+
+.adf2-posting #preview .adf2-preview-profile {
+  position: static !important;
+  float: none !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 17px;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 20px 17px !important;
+  border: 0 !important;
+  border-right: 1px solid var(--preview-line) !important;
+  border-radius: 0;
+  background: var(--preview-panel) !important;
+  text-align: center;
+}
+
+.adf2-preview-portrait {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  min-width: 0;
+  max-height: 255px;
+  overflow: hidden;
+  border: 1px solid var(--preview-line);
+  background: var(--preview-bg);
+}
+
+.adf2-posting #preview .avatar-preview {
+  position: static !important;
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(100%);
+}
+
+.adf2-preview-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+}
+
+.adf2-preview-label {
+  color: var(--preview-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-posting #preview .adf2-preview-pseudo {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font: 500 28px/1.05 "Cormorant Garamond", Georgia, serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.adf2-preview-identity-note {
+  color: var(--preview-muted);
+  font: italic 16px/1.2 "Cormorant Garamond", Georgia, serif;
+  text-align: center;
+}
+
+
+/* ==========================================================
+   CONTENU RP
+   ========================================================== */
+
+.adf2-posting #preview .adf2-preview-message {
+  position: static !important;
+  float: none !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 270px;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 23px 26px 30px !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0;
+  background: var(--preview-bg) !important;
+  color: var(--preview-ink);
+  text-align: left;
+}
+
+.adf2-preview-message-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--preview-line);
+  color: var(--preview-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-preview-text {
+  display: flow-root;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Préserver les images et les médias des RP */
+
+.adf2-preview-text img,
+.adf2-preview-text video,
+.adf2-preview-text iframe {
+  max-width: 100%;
+}
+
+.adf2-preview-text img {
+  height: auto;
+}
+
+/* Permettre de consulter les longs blocs de code */
+
+.adf2-preview-text pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+/* ==========================================================
+   SIGNATURE INFÉRIEURE
+   ========================================================== */
+
+.adf2-preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 13px 25px;
+  border-top: 1px solid var(--preview-line);
+  background: var(--preview-panel);
+  color: var(--preview-muted);
+}
+
+.adf2-preview-footer span:first-child {
+  font: italic 17px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-preview-footer span:last-child {
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 767px) {
+
+  .adf2-posting #preview .adf2-preview-header {
+    min-height: 0;
+    padding: 17px !important;
+  }
+
+  .adf2-posting #preview .adf2-preview-heading h2 {
+    font-size: 30px;
+  }
+
+  .adf2-preview-status {
+    padding: 7px 9px;
+    font-size: 8px;
+  }
+
+  /* Profil au-dessus du message */
+
+  .adf2-preview-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .adf2-posting #preview .adf2-preview-profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 14px !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--preview-line) !important;
+  }
+
+  .adf2-preview-portrait {
+    flex: 0 0 75px;
+    width: 75px;
+    height: 94px;
+    aspect-ratio: auto;
+  }
+
+  .adf2-preview-identity {
+    flex: 1 1 auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .adf2-posting #preview .adf2-preview-pseudo,
+  .adf2-preview-identity-note {
+    text-align: left;
+  }
+
+  .adf2-posting #preview .adf2-preview-pseudo {
+    font-size: 25px;
+  }
+
+  .adf2-posting #preview .adf2-preview-message {
+    min-height: 180px;
+    padding: 17px 15px 22px !important;
+  }
+
+  .adf2-preview-message-label {
+    margin-bottom: 17px;
+  }
+
+  .adf2-preview-footer {
+    padding: 12px 15px;
+  }
+
+}
+
+/* ==========================================================
+   ADF V2 — THE STORY SO FAR
+   Template : posting_topic_review
+   ========================================================== */
+
+/* CONTENEUR PRINCIPAL */
+
+.adf2-posting .adf2-topic-review {
+  --review-bg: var(--writing-bg, var(--fft-paper, #f3f2ee));
+  --review-panel: var(--writing-panel, var(--fft-panel, #e2e1dc));
+  --review-line: var(--writing-line, var(--fft-line, #bdbcb6));
+  --review-ink: var(--writing-ink, var(--fft-ink, #111));
+  --review-muted: var(--writing-muted, var(--fft-muted, #777));
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  margin: 0;
+  padding: 0 !important;
+  border: 1px solid var(--review-line);
+  border-radius: 0;
+  background: var(--review-bg);
+  color: var(--review-ink);
+  box-sizing: border-box;
+}
+
+.adf2-topic-review *,
+.adf2-topic-review *::before,
+.adf2-topic-review *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   EN-TÊTE
+   ========================================================== */
+
+.adf2-topic-review-head {
+  padding: 25px 28px 27px;
+  border-bottom: 1px solid var(--review-line);
+  background: var(--review-panel);
+}
+
+.adf2-topic-review-overline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 27px;
+  color: var(--review-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-topic-review-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adf2-topic-review-heading-text {
+  min-width: 0;
+}
+
+.adf2-topic-review-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--review-muted);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-topic-review-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--review-ink);
+  font: 500 clamp(28px, 4vw, 39px)/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.6px;
+  text-transform: none;
+}
+
+.adf2-topic-review-heading p {
+  margin: 9px 0 0;
+  color: var(--review-muted);
+  font: italic 18px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-topic-review-symbol {
+  flex: 0 0 auto;
+  color: var(--review-muted);
+  font-size: 37px;
+  line-height: 1;
+  opacity: .55;
+}
+
+/* ==========================================================
+   LISTE DES MESSAGES
+   ========================================================== */
+
+.adf2-topic-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  max-height: 650px;
+  margin: 0;
+  padding: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--review-muted) transparent;
+  counter-reset: adf2-story-post;
+}
+
+.adf2-topic-review-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.adf2-topic-review-list::-webkit-scrollbar-thumb {
+  background: var(--review-line);
+}
+
+/* ==========================================================
+   CARTE D'UN MESSAGE
+   ========================================================== */
+
+.adf2-posting .adf2-topic-review-post {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible;
+  border: 1px solid var(--review-line);
+  border-radius: 0;
+  background: var(--review-bg);
+  box-shadow: none;
+  counter-increment: adf2-story-post;
+}
+
+/* EN-TÊTE DU MESSAGE */
+
+.adf2-topic-review-post-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 71px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--review-line);
+  background: var(--review-panel);
+}
+
+.adf2-topic-review-author {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.adf2-topic-review-post-number {
+  display: grid;
+  flex: 0 0 33px;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  border: 1px solid var(--review-line);
+  color: var(--review-muted);
+}
+
+.adf2-topic-review-post-number::before {
+  content: counter(adf2-story-post, decimal-leading-zero);
+  font: italic 14px/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-topic-review-author-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.adf2-topic-review-author-label {
+  color: var(--review-muted);
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-topic-review-pseudo {
+  font: 500 22px/1.05 "Cormorant Garamond", Georgia, serif;
+  overflow-wrap: anywhere;
+}
+
+.adf2-topic-review-pseudo a {
+  font: inherit;
+  text-decoration: none;
+}
+
+.adf2-topic-review-pseudo a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.adf2-topic-review-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  color: var(--review-muted);
+  text-align: right;
+}
+
+.adf2-topic-review-date > span {
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.adf2-topic-review-date time {
+  font: 500 10px/1.5 "Inter", Arial, sans-serif;
+}
+
+/* ==========================================================
+   CONTENU DU MESSAGE
+   ========================================================== */
+
+.adf2-posting .adf2-topic-review-content {
+  display: flow-root;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 75px;
+  margin: 0 !important;
+  padding: 22px 24px !important;
+  border: 0;
+  background: var(--review-bg);
+  color: var(--review-ink);
+  overflow-wrap: anywhere;
+}
+
+/* Ne pas déformer les codes RP personnalisés */
+
+.adf2-topic-review-content img,
+.adf2-topic-review-content video,
+.adf2-topic-review-content iframe {
+  max-width: 100%;
+}
+
+.adf2-topic-review-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* ==========================================================
+   MESSAGES NON VISIBLES
+   ========================================================== */
+
+.adf2-topic-review-hidden {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--review-line);
+  background: var(--review-panel);
+  color: var(--review-muted);
+}
+
+.adf2-topic-review-hidden-icon {
+  flex: 0 0 auto;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.adf2-topic-review-hidden-text {
+  min-width: 0;
+  font: 400 11px/1.7 "Inter", Arial, sans-serif;
+}
+
+.adf2-topic-review-hidden-text p {
+  margin: 0;
+}
+
+/* ==========================================================
+   SIGNATURE
+   ========================================================== */
+
+.adf2-topic-review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-height: 49px;
+  padding: 13px 25px;
+  border-top: 1px solid var(--review-line);
+  background: var(--review-panel);
+  color: var(--review-muted);
+}
+
+.adf2-topic-review-footer span:first-child {
+  font: italic 17px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-topic-review-footer span:last-child {
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   RESPONSIVE MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 767px) {
+
+  .adf2-topic-review-head {
+    padding: 19px 16px;
+  }
+
+  .adf2-topic-review-overline {
+    margin-bottom: 21px;
+    font-size: 8px;
+  }
+
+  .adf2-topic-review-heading h2 {
+    font-size: 30px;
+  }
+
+  .adf2-topic-review-heading p {
+    font-size: 16px;
+  }
+
+  .adf2-topic-review-symbol {
+    font-size: 27px;
+  }
+
+  .adf2-topic-review-list {
+    max-height: 480px;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .adf2-topic-review-post-head {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .adf2-topic-review-pseudo {
+    font-size: 20px;
+  }
+
+  .adf2-posting .adf2-topic-review-content {
+    padding: 17px 14px !important;
+  }
+
+  .adf2-topic-review-footer {
+    padding: 12px 15px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .adf2-topic-review-date {
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 46px;
+    text-align: left;
+  }
+}
+
+/* ==========================================================
+   ADF V2 — THE CORRESPONDENCE
+   Template : privmsgs_body
+   ========================================================== */
+
+/* VARIABLES ET CONTENEUR */
+
+.adf2-pm {
+  --pm-bg: var(--fft-paper, #f3f2ee);
+  --pm-panel: var(--fft-panel, #e2e1dc);
+  --pm-line: var(--fft-line, #bdbcb6);
+  --pm-ink: var(--fft-ink, #111);
+  --pm-muted: var(--fft-muted, #777);
+
+  width: 100%;
+  max-width: 1140px;
+  min-width: 0;
+  margin: 24px auto 42px;
+  color: var(--pm-ink);
+}
+
+.adf2-pm *,
+.adf2-pm *::before,
+.adf2-pm *::after {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   EN-TÊTE ÉDITORIAL
+   ========================================================== */
+
+.adf2-pm-hero {
+  margin: 0 0 18px;
+  padding: 25px 29px 29px;
+  border: 1px solid var(--pm-line);
+  background: var(--pm-bg);
+}
+
+.adf2-pm-overline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 29px;
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.adf2-pm-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--pm-muted);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-hero h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--pm-ink);
+  font: 500 clamp(35px, 5vw, 50px)/1 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.6px;
+  text-transform: none;
+}
+
+.adf2-pm-hero p {
+  margin: 10px 0 0;
+  color: var(--pm-muted);
+  font: italic 19px/1.3 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-pm-symbol {
+  flex: 0 0 auto;
+  color: var(--pm-muted);
+  font-size: 43px;
+  line-height: 1;
+  opacity: .55;
+}
+
+
+/* ==========================================================
+   ONGLETS DE NAVIGATION
+   ========================================================== */
+
+.adf2-pm-navigation {
+  width: 100%;
+  margin: 0 0 16px;
+}
+
+.adf2-pm .adf2-pm-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--pm-line);
+  background: var(--pm-bg);
+  list-style: none !important;
+}
+
+.adf2-pm .adf2-pm-tabs > li {
+  display: flex !important;
+  float: none !important;
+  align-items: stretch;
+  justify-content: center;
+  width: 100% !important;
+  min-width: 0;
+  min-height: 57px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+  border-right: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: transparent;
+  list-style: none;
+}
+
+.adf2-pm .adf2-pm-tabs > li:last-child {
+  border-right: 0;
+}
+
+.adf2-pm .adf2-pm-tabs > li > a,
+.adf2-pm .adf2-pm-tabs > li > span {
+  display: flex !important;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  min-height: 57px;
+  margin: 0 !important;
+  padding: 12px 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent;
+  color: var(--pm-ink);
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .6px;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.adf2-pm .adf2-pm-tabs > li:hover {
+  background: var(--pm-panel);
+}
+
+/* État actif selon les classes générées par Forumactif */
+
+.adf2-pm .adf2-pm-tabs > li.active,
+.adf2-pm .adf2-pm-tabs > li.activetab,
+.adf2-pm .adf2-pm-tabs > li.selected,
+.adf2-pm .adf2-pm-tabs > li:has(> .active),
+.adf2-pm .adf2-pm-tabs > li:has(> .activetab) {
+  background: var(--pm-panel);
+}
+
+.adf2-pm .adf2-pm-tabs > li.active > *,
+.adf2-pm .adf2-pm-tabs > li.activetab > *,
+.adf2-pm .adf2-pm-tabs > li.selected > * {
+  color: var(--pm-ink);
+}
+
+
+/* ==========================================================
+   CRÉER UN NOUVEAU MESSAGE
+   ========================================================== */
+
+.adf2-pm .adf2-pm-create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 16px;
+  padding: 20px 24px;
+  border: 1px solid var(--pm-line);
+  background: var(--pm-panel);
+}
+
+.adf2-pm-create-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.adf2-pm-create-copy > span {
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-create-copy > strong {
+  color: var(--pm-ink);
+  font: 500 24px/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-pm .adf2-pm-new {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: auto;
+  min-height: 43px;
+  margin: 0;
+  padding: 12px 17px !important;
+  border: 1px solid var(--pm-ink) !important;
+  border-radius: 0 !important;
+  background: var(--pm-ink) !important;
+  color: var(--pm-bg) !important;
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .5px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  box-shadow: none !important;
+}
+
+.adf2-pm-new > span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: .8;
+}
+
+.adf2-pm .adf2-pm-new:hover {
+  opacity: .8;
+}
+
+
+/* ==========================================================
+   FORMULAIRE / CONTENEUR PRINCIPAL
+   ========================================================== */
+
+.adf2-pm .adf2-pm-form {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: var(--pm-bg);
+  color: var(--pm-ink);
+  box-shadow: none;
+}
+
+
+/* ==========================================================
+   BARRE DE FILTRAGE
+   ========================================================== */
+
+.adf2-pm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  min-height: 82px;
+  padding: 18px 23px;
+  border-bottom: 1px solid var(--pm-line);
+}
+
+.adf2-pm-toolbar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.adf2-pm-small-label {
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-capacity {
+  color: var(--pm-ink);
+  font: 500 11px/1.5 "Inter", Arial, sans-serif;
+}
+
+.adf2-pm-capacity:empty {
+  display: none;
+}
+
+.adf2-pm-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
+.adf2-pm-filter label {
+  margin-right: 5px;
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.adf2-pm .adf2-pm-filter select {
+  width: auto;
+  min-width: 130px;
+  max-width: 100%;
+  min-height: 38px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: var(--pm-bg);
+  color: var(--pm-ink);
+  font: 500 11px/1.4 "Inter", Arial, sans-serif;
+}
+
+.adf2-pm .adf2-pm-filter-button {
+  width: auto;
+  min-width: 72px;
+  min-height: 38px;
+  margin: 0;
+  padding: 9px 14px;
+  border: 1px solid var(--pm-ink);
+  border-radius: 0;
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+  box-shadow: none;
+  font: 600 10px/1.3 "Inter", Arial, sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+/* ==========================================================
+   EN-TÊTE DE LISTE
+   ========================================================== */
+
+.adf2-pm-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 23px;
+  border-bottom: 1px solid var(--pm-line);
+  background: var(--pm-panel);
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-list-header span:last-child {
+  text-align: right;
+}
+
+
+/* ==========================================================
+   LIGNES DES MESSAGES PRIVÉS
+   ========================================================== */
+
+.adf2-pm-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
+.adf2-pm .adf2-pm-row {
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 17px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 107px;
+  margin: 0 !important;
+  padding: 20px 23px !important;
+  border: 0;
+  border-bottom: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: var(--pm-bg);
+  box-shadow: none;
+  transition: background .2s ease;
+}
+
+.adf2-pm .adf2-pm-row:hover {
+  background: var(--pm-panel);
+}
+
+
+/* ICÔNE DE STATUT */
+
+.adf2-pm .adf2-pm-status {
+  display: grid !important;
+  float: none !important;
+  place-items: center;
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: var(--pm-panel);
+}
+
+.adf2-pm-status img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 27px;
+  max-height: 27px;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+
+/* INFORMATIONS DU MESSAGE */
+
+.adf2-pm .adf2-pm-infos {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.adf2-pm-message-label {
+  color: var(--pm-muted);
+  font: 600 8px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.adf2-pm .adf2-pm-subject {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  color: var(--pm-ink);
+  font: 500 27px/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.3px;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.adf2-pm-subject:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+
+/* EXPÉDITEUR ET DATE */
+
+.adf2-pm-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  color: var(--pm-muted);
+  font: 500 10px/1.5 "Inter", Arial, sans-serif;
+}
+
+.adf2-pm-from,
+.adf2-pm-date {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.adf2-pm-from a {
+  color: var(--pm-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.adf2-pm-from a:hover {
+  text-decoration: underline;
+}
+
+.adf2-pm-meta-divider {
+  opacity: .55;
+}
+
+
+/* CASE DE SÉLECTION */
+
+.adf2-pm-select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 37px;
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid var(--pm-line);
+  background: transparent;
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.adf2-pm-select input {
+  display: block !important;
+  flex: 0 0 15px;
+  width: 15px !important;
+  height: 15px !important;
+  margin: 0 !important;
+  accent-color: var(--pm-ink);
+  cursor: pointer;
+}
+
+.adf2-pm-select:has(input:checked) {
+  border-color: var(--pm-ink);
+  background: var(--pm-panel);
+  color: var(--pm-ink);
+}
+
+
+/* ==========================================================
+   AUCUN MESSAGE
+   ========================================================== */
+
+.adf2-pm-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 215px;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.adf2-pm-empty-symbol {
+  color: var(--pm-muted);
+  font-size: 29px;
+  line-height: 1;
+}
+
+.adf2-pm-empty strong {
+  color: var(--pm-ink);
+  font: 500 30px/1.1 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-pm-empty p {
+  margin: 0;
+  color: var(--pm-muted);
+  font: 400 11px/1.7 "Inter", Arial, sans-serif;
+}
+
+
+/* ==========================================================
+   GESTION GROUPÉE DES MESSAGES
+   ========================================================== */
+
+.adf2-pm-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 22px 23px;
+  background: var(--pm-panel);
+}
+
+
+/* SÉLECTIONNER / DÉSÉLECTIONNER */
+
+.adf2-pm-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.adf2-pm-selection > span {
+  color: var(--pm-muted);
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+}
+
+.adf2-pm-selection > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--pm-muted);
+}
+
+.adf2-pm-selection a {
+  color: var(--pm-ink);
+  font: 600 10px/1.5 "Inter", Arial, sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* BOUTONS DE GESTION */
+
+.adf2-pm-bulk {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  padding-top: 17px;
+  border-top: 1px solid var(--pm-line);
+}
+
+.adf2-pm .adf2-pm-bulk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 40px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--pm-line);
+  border-radius: 0;
+  background: var(--pm-bg);
+  color: var(--pm-ink);
+  box-shadow: none;
+  font: 600 10px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.adf2-pm .adf2-pm-bulk-button:hover {
+  border-color: var(--pm-muted);
+  background: var(--pm-panel);
+}
+
+.adf2-pm .adf2-pm-delete-all {
+  border-color: var(--pm-ink);
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+}
+
+.adf2-pm .adf2-pm-delete-all:hover {
+  background: var(--pm-ink);
+  color: var(--pm-bg);
+  opacity: .8;
+}
+
+
+/* ==========================================================
+   SIGNATURE INFÉRIEURE
+   ========================================================== */
+
+.adf2-pm-signature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 15px 2px;
+  border-top: 1px solid var(--pm-line);
+  color: var(--pm-muted);
+}
+
+.adf2-pm-signature > span:first-child {
+  font: italic 18px/1.2 "Cormorant Garamond", Georgia, serif;
+}
+
+.adf2-pm-signature > span:last-child {
+  font: 600 9px/1.4 "Inter", Arial, sans-serif;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================== */
+
+@media screen and (max-width: 850px) {
+
+  .adf2-pm-toolbar {
+    align-items: flex-start;
+  }
+
+  .adf2-pm-filter {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .adf2-pm .adf2-pm-row {
+    gap: 13px;
+    padding: 16px !important;
+  }
+
+  .adf2-pm-bulk {
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   ========================================================== */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-pm {
+    margin: 10px auto 25px;
+  }
+
+  /* EN-TÊTE */
+
+  .adf2-pm-hero {
+    padding: 19px 17px;
+    margin-bottom: 12px;
+  }
+
+  .adf2-pm-overline {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
+
+  .adf2-pm-hero h1 {
+    font-size: 37px;
+  }
+
+  .adf2-pm-hero p {
+    font-size: 16px;
+  }
+
+  .adf2-pm-symbol {
+    font-size: 27px;
+  }
+
+  /* ONGLETS SUR DEUX COLONNES */
+
+  .adf2-pm .adf2-pm-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adf2-pm .adf2-pm-tabs > li {
+    min-height: 48px;
+  }
+
+  .adf2-pm .adf2-pm-tabs > li:nth-child(2) {
+    border-right: 0;
+  }
+
+  .adf2-pm .adf2-pm-tabs > li:nth-child(-n+2) {
+    border-bottom: 1px solid var(--pm-line);
+  }
+
+  .adf2-pm .adf2-pm-tabs > li > a,
+  .adf2-pm .adf2-pm-tabs > li > span {
+    min-height: 48px;
+    padding: 10px 7px !important;
+    font-size: 9px;
+  }
+
+  /* NOUVEAU MESSAGE */
+
+  .adf2-pm .adf2-pm-create {
+    padding: 17px;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .adf2-pm .adf2-pm-new {
+    width: 100%;
+  }
+
+  /* FILTRES */
+
+  .adf2-pm-toolbar {
+    padding: 16px 14px;
+  }
+
+  .adf2-pm-filter label {
+    flex: 0 0 100%;
+  }
+
+  .adf2-pm-filter select {
+    flex: 1 1 120px;
+  }
+
+  .adf2-pm-list-header {
+    padding: 12px 14px;
+    font-size: 8px;
+  }
+
+  /* LISTE DES MESSAGES */
+
+  .adf2-pm .adf2-pm-row {
+    grid-template-columns: 35px minmax(0, 1fr) 21px;
+    gap: 10px;
+    min-height: 94px;
+    padding: 14px 11px !important;
+  }
+
+  .adf2-pm .adf2-pm-status {
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px;
+  }
+
+  .adf2-pm-status img {
+    max-width: 22px;
+    max-height: 22px;
+  }
+
+  .adf2-pm .adf2-pm-subject {
+    font-size: 23px;
+  }
+
+  .adf2-pm-meta {
+    font-size: 9px;
+  }
+
+  .adf2-pm-select {
+    width: 21px;
+    min-height: 25px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .adf2-pm-select > span {
+    display: none;
+  }
+
+  /* GESTION DES MESSAGES */
+
+  .adf2-pm-footer {
+    padding: 17px 13px;
+  }
+
+  .adf2-pm-bulk {
+    gap: 7px;
+  }
+
+  .adf2-pm .adf2-pm-bulk-button {
+    flex: 1 1 120px;
+    min-width: 0;
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .adf2-pm-signature {
+    padding: 13px 0;
+  }
+
+}
+
+
+/* ==========================================================
+   ACCESSIBILITÉ
+   ========================================================== */
+
+.adf2-pm a:focus-visible,
+.adf2-pm input:focus-visible,
+.adf2-pm select:focus-visible {
+  outline: 2px solid var(--pm-ink);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .adf2-pm *,
+  .adf2-pm *::before,
+  .adf2-pm *::after {
+    transition: none !important;
+  }
+
+}
+
+/* ==========================================
+   ADF V2 — THE CORRESPONDENCE
+   CORRECTIONS D'AFFICHAGE
+   ========================================== */
+
+/* 01 — HARMONISER LES QUATRE ONGLETS */
+
+.adf2-pm .adf2-pm-tabs > li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font: 600 10px/1.4 "Inter", Arial, sans-serif !important;
+  letter-spacing: .6px !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  color: var(--pm-ink) !important;
+}
+
+.adf2-pm .adf2-pm-tabs > li > a,
+.adf2-pm .adf2-pm-tabs > li > span,
+.adf2-pm .adf2-pm-tabs > li > strong {
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: inherit !important;
+}
+
+/* Mettre en évidence le dossier actif */
+
+.adf2-pm .adf2-pm-tabs > li:not(:has(a)) {
+  background: var(--pm-panel) !important;
+  box-shadow: inset 0 -2px 0 var(--pm-ink);
+}
+
+
+/* 02 — SUPPRIMER LES ANCIENS STYLES PAGE-ACTIONS */
+
+.adf2-pm .adf2-pm-create {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 16px !important;
+  padding: 20px 24px !important;
+  border: 1px solid var(--pm-line) !important;
+  border-radius: 0 !important;
+  background: var(--pm-panel) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+
+
+/* 03 — ÉVITER LA DOUBLE ANNONCE DE BOÎTE VIDE */
+
+.adf2-pm-form:has(.adf2-pm-empty)
+.adf2-pm-toolbar-info {
+  display: none !important;
+}
+
+
+/* 04 — HARMONISER LE FILTRE */
+
+.adf2-pm .adf2-pm-form .adf2-pm-filter select {
+  min-height: 38px !important;
+  padding: 8px 12px !important;
+  border: 1px solid var(--pm-line) !important;
+  border-radius: 0 !important;
+  background: var(--pm-bg) !important;
+  color: var(--pm-ink) !important;
+  box-shadow: none !important;
+}
+
+
+/* 05 — MOBILE */
+
+@media screen and (max-width: 600px) {
+
+  .adf2-pm .adf2-pm-tabs > li {
+    font-size: 9px !important;
+  }
+
+  .adf2-pm .adf2-pm-create {
+    padding: 17px !important;
+  }
+
+  .adf2-pm-form:has(.adf2-pm-empty)
+  .adf2-pm-toolbar {
+    justify-content: flex-end;
+  }
+
+}
