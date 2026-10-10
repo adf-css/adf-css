@@ -16474,21 +16474,32 @@ html body .sidebar #notiffi_button .unread_count {
   --adf-background: url("https://i.ibb.co/3yghrNKW/6.png");
 }
 
-body {
-  background-color: var(--body);
-  background-image: var(--adf-background);
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+html {
+  min-height: 100%;
+  background-color: var(--body) !important;
+  background-image: var(--adf-background) !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+html body,
+html[data-color-scheme="light"] body,
+html[data-color-scheme="dark"] body {
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+html body .main_forum,
+html[data-color-scheme="light"] body .main_forum,
+html[data-color-scheme="dark"] body .main_forum,
+html body #page-body {
+  background: transparent !important;
 }
 
 @media (max-width: 767px) {
-  body {
-    background-attachment: scroll;
+  html {
+    background-attachment: scroll !important;
   }
-}
-
-html body .main_forum {
-  background: transparent !important;
 }
