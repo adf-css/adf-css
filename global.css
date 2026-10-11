@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/* =====================================================================
+   ADF CSS | 01 | FONDATIONS
+   Variables de thème, couleurs clair/sombre
+   ===================================================================== */
+
 :root,
 :root[data-color-scheme="light"] {
   --forumSize: min(1180px, calc(100vw - 120px));
@@ -41,6 +46,11 @@
   --fft-muted: #9b9b96;
 }
 
+/* =====================================================================
+   ADF CSS | 01 | FONDATIONS
+   Base du forum et dimensions
+   ===================================================================== */
+
 html { scroll-behavior: smooth; }
 body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
 .main_forum { width: 100%; }
@@ -51,6 +61,11 @@ body { min-width: 0; font: 400 14px/1.6 var(--font); background: var(--body); }
   margin-right: 5px;
   font-size: var(--normal-size);
 }
+
+/* =====================================================================
+   ADF CSS | 01 | FONDATIONS
+   Balises typographiques personnalisées (t1, b1, b2, etc.)
+   ===================================================================== */
 
 :is(t1, t1g1, t1g2, t1g3, t1g4) {
   margin: 10px 0 13px;
@@ -141,6 +156,11 @@ u1g2 { box-shadow: inset 0 -.5em var(--accent-group2); }
 u1g3 { box-shadow: inset 0 -.5em var(--accent-group3); }
 u1g4 { box-shadow: inset 0 -.5em var(--accent-group4); }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens visuels de messages (fft-post, fft-icon, gifs)
+   ===================================================================== */
+
 .fft-post-visuals {
   --fft-icon-size: 86px;
   width: 100%;
@@ -209,6 +229,11 @@ img.fft-gif-small,
     gap: 14px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien dressing fft-wardrobe
+   ===================================================================== */
 
 .fft-wardrobe {
   width: min(570px, 100%);
@@ -407,6 +432,11 @@ img.fft-gif-small,
   .fft-wardrobe-swatches { margin-top: 7px; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens arrangements visuels fft-ls
+   ===================================================================== */
+
 .fft-ls-icons,
 .fft-ls-quote,
 .fft-ls-gif,
@@ -498,6 +528,11 @@ img.fft-gif-small,
   .fft-ls-panorama img { height: 160px !important; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien en-tête et navigation fft-navbar
+   ===================================================================== */
+
 #page-header { width: 100%; }
 .fft-navbar {
   width: 100%;
@@ -528,6 +563,11 @@ img.fft-gif-small,
   border: 1px solid var(--fft-line);
   background: var(--fft-paper);
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne indexation categories et forums
+   ===================================================================== */
 
 .fft-index { width: 100%; counter-reset: fft-category; }
 .fft-category { width: 100%; margin: 0 0 42px; padding: 0; border: 0; background: var(--transparent); counter-increment: fft-category; }
@@ -679,6 +719,11 @@ img.fft-gif-small,
 .fft-forum-avatar > .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--light); font-size: 25px; }
 .fft-forum-avatar img + .ph { display: grid; }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Actions, hub et groupes
+   ===================================================================== */
+
 .page-actions { width: 100%; margin: 26px 0; font-size: 14px; }
 .hub {
   margin: 42px 0 0;
@@ -697,6 +742,11 @@ img.fft-gif-small,
 .hub_groups .group { min-height: 82px; padding: 18px; border-right: 1px solid var(--fft-line); }
 
 .sidebar { z-index: 100; }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Épingles, favoris, bookmarks
+   ===================================================================== */
 
 #bookmark-button-open {
   width: 45px;
@@ -909,6 +959,11 @@ x-bookmark-list path {
   .fft-forum-avatar { grid-column: 2; grid-row: 1; }
   .hub_groups { grid-template-columns: 1fr 1fr; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne vue profil membre fft-profile-view
+   ===================================================================== */
 
 body #fft-profile-view.fft-profile-view {
   width: 100%;
@@ -1347,6 +1402,11 @@ img.avatar-preview {
   #fft-profile-view .profile_infos { padding: 22px 18px; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciennes fiches de présentation fft-pres
+   ===================================================================== */
+
 .fft-pres {
   width: min(720px, 100%);
   margin: 24px auto;
@@ -1530,6 +1590,11 @@ img.avatar-preview {
   .fft-pres-question { min-height: 0; }
   .fft-pres-player { padding: 26px 24px; grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens modèles introduction fft-intro
+   ===================================================================== */
 
 .fft-intro {
   width: min(680px, 100%);
@@ -1726,6 +1791,11 @@ img.avatar-preview {
   .fft-intro-main { max-height: none; padding: 28px 24px; }
   .fft-intro-section { padding: 26px 22px; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens dossiers fft-dossier
+   ===================================================================== */
 
 .fft-dossier {
   width: min(700px, 100%);
@@ -1926,6 +1996,11 @@ img.avatar-preview {
   .fft-dossier-content { padding: 26px 22px; }
   .fft-dossier-questions div { grid-template-columns: 1fr; gap: 7px; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens pré-liens fft-prelinks
+   ===================================================================== */
 
 .fft-prelinks {
   width: min(620px, 100%);
@@ -2261,6 +2336,11 @@ img.avatar-preview {
   .fft-prelinks-notes dl > div { grid-template-columns: 1fr; gap: 4px; }
   .fft-prelinks-contact { grid-template-columns: 1fr; gap: 8px; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens posts administratifs fft-admin
+   ===================================================================== */
 
 .fft-admin-post {
   width: min(720px, 100%);
@@ -2777,6 +2857,11 @@ img.avatar-preview {
   .fft-admin-poster-gif { max-width: 100% !important; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens codes RP fft-rp
+   ===================================================================== */
+
 .fft-rp {
   width: min(680px, 100%);
   margin: 30px auto;
@@ -2992,6 +3077,11 @@ body #page-body {
   padding: 0;
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ajustements de navigation et en-tête historiques
+   ===================================================================== */
+
 body .fft-navbar {
   width: 100%;
   height: 52px;
@@ -3130,6 +3220,11 @@ body > .sidebar .myface-tooltip {
   transform: translateY(-50%);
   white-space: nowrap;
 }
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne page accueil, sidebar et portail
+   ===================================================================== */
+
 .fft-side-rail {
   width: 34px;
   position: fixed;
@@ -3447,6 +3542,11 @@ body {
   position: relative;
   background: var(--transparent);
 }
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ajustements historiques du portail, QEEL et forum
+   ===================================================================== */
+
 #page-header,
 #page-body,
 .fft-home,
@@ -4222,6 +4322,11 @@ html body .notification.alert .alert_close {
   transform: none;
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne liste des membres
+   ===================================================================== */
+
 .fft-members { margin-top: 34px; }
 .fft-members-head {
   min-height: 112px;
@@ -4501,6 +4606,11 @@ body .page-actions:not(form) #mark_read:hover {
 }
 
 .topic_separator { height: 1px; margin: 30px 0 14px; background: var(--fft-line); }
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne liste des sujets
+   ===================================================================== */
+
 .fft-topic {
   width: 100%;
   min-height: 118px;
@@ -4657,6 +4767,11 @@ body .page-actions:not(form) #mark_read:hover {
   .fft-topic-last { grid-column: 1 / -1; grid-row: 2; border-left: 0; border-top: 1px solid var(--fft-line); }
   .fft-topic-avatar { display: none; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne page d’un sous-forum
+   ===================================================================== */
 
 .fft-forum-page {
   width: 100%;
@@ -5066,6 +5181,11 @@ body .page-actions .button.primary:hover {
     display: none;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne vue de sujet / messages
+   ===================================================================== */
 
 .fft-viewtopic { width: 100%; margin-top: 34px; color: var(--fft-ink); }
 .fft-viewtopic-head {
@@ -5522,6 +5642,11 @@ body .page-actions .button.primary:hover {
 .page-tab.clear .post_details {
   display: none;
 }
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien bottin des emplois
+   ===================================================================== */
+
 .fft-job-tabs {
   display: flex;
   flex-direction: column;
@@ -5650,6 +5775,11 @@ body .page-actions .button.primary:hover {
     width: auto;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien calendrier
+   ===================================================================== */
 
 .fft-calendar-tabs {
   display: flex;
@@ -5783,6 +5913,11 @@ body .page-actions .button.primary:hover {
     border-bottom: 1px solid var(--fft-line);
   }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien Soulmate Searcher
+   ===================================================================== */
 
 .fft-soulmate {
   width: min(760px, 100%);
@@ -6055,6 +6190,11 @@ body .page-actions .button.primary:hover {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciennes relations et fiches de liens
+   ===================================================================== */
+
 .fft-relationships {
   width: min(620px, 100%);
   margin: 28px auto;
@@ -6151,6 +6291,11 @@ body .page-actions .button.primary:hover {
   .fft-relationship-icon span { display: none; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien moodboard
+   ===================================================================== */
+
 .fft-moodboard-card {
   width: min(680px, 100%);
   margin: 28px auto;
@@ -6172,6 +6317,11 @@ body .page-actions .button.primary:hover {
     margin-bottom: 4px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne visite de domicile
+   ===================================================================== */
 
 .fft-home-tour {
   width: min(680px, 100%);
@@ -6333,6 +6483,11 @@ body .page-actions .button.primary:hover {
   .fft-home-tour-room figcaption > div { padding: 12px; }
 }
 
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien thème astro
+   ===================================================================== */
+
 .fft-astro {
   width: min(680px, 100%);
   margin: 28px auto;
@@ -6476,6 +6631,11 @@ body .page-actions .button.primary:hover {
   .fft-astro-placements div:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid var(--fft-line); }
   .fft-astro-placements div:last-child { border-bottom: 0; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien Discover
+   ===================================================================== */
 
 .fft-discover {
   width: 100%;
@@ -6633,6 +6793,11 @@ img.act-icon {
   text-align: center;
   text-transform: uppercase;
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancien Myspace
+   ===================================================================== */
 
 .fft-myspace-profile,
 .fft-myspace-post,
@@ -6881,6 +7046,11 @@ img.act-icon {
   .fft-discover-avatar { width: 42px; height: 42px; }
   .fft-discover-time { grid-column: 2; justify-self: start; }
 }
+
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Anciens SMS et notifications, Switcheroo, styles natifs
+   ===================================================================== */
 
 .fft-sms-inbox {
   width: 100%;
@@ -7253,6 +7423,11 @@ a.forumtitle{font-size: var(--large-size);}
 .votes-users-list{justify-content: start;margin: 20px 0 0;}
 .codebox:has(code),.codebox.spoiler,blockquote:has(cite) div{display: block;width: 90%;margin: 0 auto;position: relative;background: var(--neutralDark);padding: 5px 10px;border-radius: 5px;}
 .codebox:has(code) dt{display: none;}
+/* =====================================================================
+   ADF CSS | 02 | COMPATIBILITE HISTORIQUE — NE PAS SUPPRIMER
+   Ancienne codebox déroulante
+   ===================================================================== */
+
 .codebox.fft-code-collapsible{padding: 0;overflow: hidden;}
 .codebox.fft-code-collapsible > dt{min-height: 38px;padding: 9px 12px;display: flex;align-items: center;justify-content: space-between;gap: 15px;cursor: pointer;user-select: none;}
 .codebox.fft-code-collapsible > dt::after{content: "Afficher";font-size: var(--little-size);font-weight: 600;text-transform: uppercase;}
@@ -7310,6 +7485,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .profile_awards-title{font-size: 11px;font-weight: 700;text-transform: uppercase;letter-spacing: 1px;white-space: nowrap;color: var(--textColor);}
 .profile_awards .awards_block_simple{display: flex;align-items: center;flex-wrap: wrap;gap: 5px;}
 .profile_awards .award{width: 32px;height: 32px;flex-shrink: 0;}
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Accueil et raccourcis
+   ===================================================================== */
+
 .adf2-home{--adf2-bg: var(--fft-paper,#f3f2ee);--adf2-ink: var(--fft-ink,#111);--adf2-muted: var(--fft-muted,#6d6d68);--adf2-line: var(--fft-line,#bdbcb6);--adf2-round: 0;width: 100%;color: var(--adf2-ink);box-sizing: border-box;}
 .adf2-home *,.adf2-home *::before,.adf2-home *::after{box-sizing: border-box;}
 .adf2-shortcuts{display: grid;grid-template-columns: repeat(6,minmax(0,1fr));gap: 7px;margin-bottom: 13px;}
@@ -7380,6 +7560,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-music a span:last-child{font-size: 10px;font-weight: 700;line-height: 1.5;letter-spacing: .05em;text-transform: uppercase;}
 .adf2-music small{display: block;color: var(--adf2-muted);font-size: 10px;font-weight: 500;}
 .adf2-music:hover{background: var(--adf2-bg);transition: background .25s ease;}
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Index des catégories et forums
+   ===================================================================== */
+
 .adf2-index{width: 100%;margin: 40px 0;counter-reset: adf-category;}
 .adf2-category{margin-bottom: 55px;counter-increment: adf-category;}
 .adf2-category-header{display: flex;align-items: center;gap: 25px;margin-bottom: 22px;padding: 0 5px;}
@@ -7421,6 +7606,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-forum-image{min-height: 220px;}
 .adf2-forum-content{min-height: 0;}
 }
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Liste des sujets et icônes
+   ===================================================================== */
+
 .adf2-topic-separator{height: 12px;margin: 0;border: 0;}
 .adf2-topic{width: 100%;min-width: 0;height: 72px;min-height: 72px;margin: 0;padding: 0;position: relative;display: grid;grid-template-columns: 76px minmax(0,1fr) 180px 95px;grid-template-rows: minmax(0,1fr);align-items: stretch;gap: 0;overflow: hidden;border: 0;border-bottom: 1px solid var(--fft-line,#bdbcb6);border-radius: 0;background: var(--fft-paper,#f3f2ee);color: var(--fft-ink,#111);transition: background-color .2s ease;}
 .adf2-topic:hover{background: var(--fft-panel,#e2e1dc);transform: none;}
@@ -7481,6 +7671,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-topic-last-author{justify-content: flex-start;}
 .adf2-topic-avatar{grid-column: 3;grid-row: 1 / 3;height: 100%;min-height: 76px;}
 }
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Affichage des messages et auteurs
+   ===================================================================== */
+
 .adf2-viewtopic{--adf2-post-bg: var(--fft-paper,#f3f2ee);--adf2-post-ink: var(--fft-ink,#151515);--adf2-post-line: var(--fft-line,#c9c7c2);--adf2-post-muted: var(--fft-muted,#85817e);width: 100%;min-width: 0;}
 .adf2-viewtopic *,.adf2-viewtopic *::before,.adf2-viewtopic *::after{box-sizing: border-box;}
 .adf2-thread-head{padding: 22px 0 18px;border-bottom: 1px solid var(--adf2-post-line);}
@@ -7557,6 +7752,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-profile-field img{max-width: 100% !important;height: auto !important;}
 @media (max-width: 620px){.adf2-profile-gif{grid-column: 1 / -1;height: 75px;margin-top: 0;}
 }
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Page d’un forum
+   ===================================================================== */
+
 .adf2-viewforum{--adf2-vf-paper: var(--fft-paper,#f3f2ee);--adf2-vf-ink: var(--fft-ink,#111);--adf2-vf-muted: var(--fft-muted,#777);--adf2-vf-line: var(--fft-line,#bdbcb6);--adf2-vf-panel: var(--fft-panel,#e2e1dc);width: 100%;min-width: 0;color: var(--adf2-vf-ink);}
 .adf2-viewforum *,.adf2-viewforum *::before,.adf2-viewforum *::after{box-sizing: border-box;}
 .adf2-viewforum-boards:empty{display: none;}
@@ -7617,6 +7817,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-viewforum > .adf2-viewforum-topics,.adf2-viewforum > .adf2-viewforum-footer{display: block;width: 100%;max-width: 100%;min-width: 0;margin-left: 0;margin-right: 0;box-sizing: border-box;float: none;}
 .adf2-viewforum > .adf2-viewforum-footer{display: flex;}
 .adf2-viewforum-topics .adf2-topic{width: 100%;max-width: 100%;min-width: 0;box-sizing: border-box;}
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Liste des membres
+   ===================================================================== */
+
 .adf2-members{--m-bg:#f3f2ee;--m-ink:#191919;--m-muted:#77756f;--m-line:#c8c6bf;--m-panel:#e6e5e0;width:100%;margin:28px auto 45px;color:var(--m-ink)}
 .adf2-members *{box-sizing:border-box}
 .adf2-members-header{border:1px solid var(--m-line);background:var(--m-bg)}
@@ -7678,6 +7883,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-member-visual{height:290px}
 .adf2-members-topline span:last-child,.adf2-members-section span:last-child{display:none}
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Découvrir / Discover
+   ===================================================================== */
 
 .adf2-discover{--d-bg:#f3f2ee;--d-panel:#e6e5e0;--d-ink:#191919;--d-muted:#77756f;--d-line:#c8c6bf;width:100%;margin:28px auto 45px;color:var(--d-ink)}
 .adf2-discover *{box-sizing:border-box}
@@ -7752,6 +7962,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 .adf2-discover .adf2-discover-item{
   grid-template-columns:42px minmax(0,1fr) auto;
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Modules filmiques / film strips
+   ===================================================================== */
 
 .adf2-film{
   --film-bg:var(--fft-paper,#f3f2ee);
@@ -8219,6 +8434,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
   }
 
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Communauté / QEEL
+   ===================================================================== */
 
 .adf2-community {
   --community-bg: var(--fft-paper, #f5f4f1);
@@ -8783,6 +9003,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
 }
 
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Navigation globale, en-tête
+   ===================================================================== */
+
 .adf2-global-nav {
   position: relative;
   z-index: 100;
@@ -8977,6 +9202,11 @@ a.group-mentiontag{background-color: transparent !important;color: var(--fft-ink
   object-fit: contain;
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Sidebar, notifications
+   ===================================================================== */
+
 .adf2-sidebar {
   --adf2-side-ink: #171717;
   --adf2-side-bg: #f5f4f0;
@@ -9149,6 +9379,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .theme-toggle .light {
     display: flex !important;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Recherche / formulaire
+   ===================================================================== */
 
 .adf2-search {
   width: 100%;
@@ -9539,6 +9774,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .theme-toggle .light {
   height: 14px !important;
   accent-color: var(--fft-ink, #111);
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Résultats de recherche
+   ===================================================================== */
 
 .adf2-results-posts {
   width: 100%;
@@ -10358,6 +10598,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .theme-toggle .light {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Blog
+   ===================================================================== */
+
 .adf2-blog-list {
   display: flex;
   flex-direction: column;
@@ -10679,6 +10924,11 @@ html[data-color-scheme="dark"] .sidebar_bottom .theme-toggle .light {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   SMS et messages privés courts
+   ===================================================================== */
+
 .adf2-sms-phone {
   --sms-bg: var(--fft-paper, #f6f3ed);
   --sms-panel: var(--fft-panel, #e9e4db);
@@ -10897,6 +11147,11 @@ html[data-color-scheme="dark"] .adf2-dm-ready .adf2-dm-send { background: #e7e7e
 @media screen and (min-width: 768px) {
   .adf2-mobile-menu { display: none !important; }
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Sondages
+   ===================================================================== */
 
 .adf2-poll-form {
   width: 100%;
@@ -11578,6 +11833,11 @@ html[data-color-scheme="dark"] .adf2-dm-ready .adf2-dm-send { background: #e7e7e
 
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Cartes et aperçu des mentions
+   ===================================================================== */
+
 .main-tooltip.adf2-mention-card {
   --mention-bg: var(--fft-paper, #f3f2ee);
   --mention-panel: var(--fft-panel, #e9e4db);
@@ -11923,6 +12183,11 @@ html[data-color-scheme="dark"] .adf2-mention-card {
     width: min(345px, calc(100vw - 20px)) !important;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Éditeur de messages / posting
+   ===================================================================== */
 
 .adf2-posting {
   --writing-bg: var(--fft-paper, #f6f3ed);
@@ -12889,6 +13154,11 @@ html[data-color-scheme="dark"] .adf2-posting {
   box-sizing: border-box;
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Constructeur de sondages dans l’éditeur
+   ===================================================================== */
+
 .adf2-poll-builder *,
 .adf2-poll-builder *::before,
 .adf2-poll-builder *::after {
@@ -13332,6 +13602,11 @@ html[data-color-scheme="dark"] .adf2-posting {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Ajustements bookmarks liés à l’éditeur
+   ===================================================================== */
+
 #bookmark-popover .adf2-bookmark-close {
   display: none;
 }
@@ -13404,6 +13679,11 @@ html[data-color-scheme="dark"] .adf2-posting {
     flex: 0 0 auto;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Aperçu du message
+   ===================================================================== */
 
 .adf2-posting #preview.adf2-preview {
   --preview-bg: var(--writing-bg, var(--fft-paper, #f3f2ee));
@@ -13733,6 +14013,11 @@ html[data-color-scheme="dark"] .adf2-posting {
   }
 
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Revue du sujet en réponse
+   ===================================================================== */
 
 .adf2-posting .adf2-topic-review {
   --review-bg: var(--writing-bg, var(--fft-paper, #f3f2ee));
@@ -14081,6 +14366,11 @@ html[data-color-scheme="dark"] .adf2-posting {
     text-align: left;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Messagerie privée complète (PM)
+   ===================================================================== */
 
 .adf2-pm {
   --pm-bg: var(--fft-paper, #f3f2ee);
@@ -15822,6 +16112,11 @@ html body .sidebar #notiffi_button .unread_count {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Édition du profil utilisateur
+   ===================================================================== */
+
 .adf2-profile-shell {
   --adf-prof-ink: var(--fft-ink, #1b1b1b);
   --adf-prof-paper: var(--fft-paper, #f5f4f0);
@@ -16472,6 +16767,11 @@ html body .sidebar #notiffi_button .unread_count {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 04 | PALETTE ET FONDS COMPLEMENTAIRES
+   Fonds floraux clair/sombre et affichage html/body
+   ===================================================================== */
+
 :root,
 :root[data-color-scheme="light"] {
   --adf-background: url("https://i.ibb.co/wrWv9ZNK/1.png");
@@ -16510,6 +16810,11 @@ html body #page-body {
     background-attachment: scroll !important;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Annonce administrative générique
+   ===================================================================== */
 
 .adf-announcement {
   --ann-paper: var(--fft-paper, #f3f2ee);
@@ -16721,6 +17026,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Présentation — adf-pres
+   ===================================================================== */
+
 .adf-pres {
   --pres-bg: var(--fft-paper, #f3f2ee);
   --pres-panel: var(--fft-panel, #e2e1dc);
@@ -17185,6 +17495,11 @@ html body #page-body {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Carnet de liens — adf-links
+   ===================================================================== */
+
 .adf-links {
   --links-paper: var(--fft-paper, #f3f2ee);
   --links-panel: var(--fft-panel, #e2e1dc);
@@ -17572,6 +17887,11 @@ html body #page-body {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Relations — adf-relations
+   ===================================================================== */
+
 .adf-relations {
   --rel-paper: var(--fft-paper, #f3f2ee);
   --rel-line: var(--fft-line, #bdbcb6);
@@ -17881,6 +18201,11 @@ html body #page-body {
     transition: none;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Suivi des RP — adf-rps
+   ===================================================================== */
 
 .adf-rps {
   --rps-paper: var(--fft-paper, #f3f2ee);
@@ -18235,6 +18560,11 @@ html body #page-body {
     transition: none;
   }
 }
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Moodboard — adf-moodboard
+   ===================================================================== */
+
 .adf-moodboard {
   --mb-paper: var(--fft-paper, #f3f2ee);
   --mb-panel: var(--fft-panel, #e2e1dc);
@@ -18400,6 +18730,11 @@ html body #page-body {
     transition: none;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Wardrobe — adf-wardrobe
+   ===================================================================== */
 
 .adf-wardrobe {
   --ward-paper: var(--fft-paper, #f3f2ee);
@@ -18650,6 +18985,11 @@ html body #page-body {
     gap: 20px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Home tour — adf-home
+   ===================================================================== */
 
 .adf-home {
   --home-paper: var(--fft-paper, #f3f2ee);
@@ -18972,6 +19312,11 @@ html body #page-body {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Playlist — adf-playlist
+   ===================================================================== */
 
 .adf-playlist {
   --pl-paper: var(--fft-paper, #f3f2ee);
@@ -19388,6 +19733,11 @@ html body #page-body {
    ADF V2 — LIENS RAPIDES
    ========================================== */
 
+/* =====================================================================
+   ADF CSS | 03 | TEMPLATES ADF V2 — adf2
+   Liens rapides — complément adf2-quick
+   ===================================================================== */
+
 .adf2-quick-links {
   margin: 45px 0;
   padding: 35px;
@@ -19484,6 +19834,11 @@ html body #page-body {
     grid-template-columns: 1fr;
   }
 }
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Bottin faceclaims — adf-fc
+   ===================================================================== */
+
 .adf-fc {
   --fc-paper: var(--fft-paper, #f3f2ee);
   --fc-line: var(--fft-line, #bdbcb6);
@@ -19686,6 +20041,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Bottin multicomptes — adf-mc
+   ===================================================================== */
+
 .adf-mc {
   --mc-paper: var(--fft-paper, #f3f2ee);
   --mc-line: var(--fft-line, #bdbcb6);
@@ -19880,6 +20240,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Bottin métiers — adf-jobs
+   ===================================================================== */
 
 .adf-jobs {
   --jobs-paper: var(--fft-paper, #f3f2ee);
@@ -20248,6 +20613,11 @@ html body #page-body {
   }
 }
 
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Bottin logements — adf-housing
+   ===================================================================== */
+
 .adf-housing {
   --housing-paper: var(--fft-paper, #f3f2ee);
   --housing-line: var(--fft-line, #bdbcb6);
@@ -20477,6 +20847,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Guide de la ville — adf-places
+   ===================================================================== */
 
 .adf-places {
   --places-paper: var(--fft-paper, #f3f2ee);
@@ -20708,6 +21083,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Validation des membres — adf-validation
+   ===================================================================== */
+
 .adf-validation {
   --validation-paper: var(--fft-paper, #f3f2ee);
   --validation-panel: var(--fft-panel, #e5e3de);
@@ -20954,6 +21334,11 @@ html body #page-body {
     height: 95px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Pré-liens — adf-pl
+   ===================================================================== */
 
 .adf-pl {
   --pl-paper: var(--fft-paper, #f3f2ee);
@@ -21352,6 +21737,11 @@ html body #page-body {
 .adf-pl-expectations {
   border-bottom: 0;
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Soulmate Searcher et notification — adf-soulmate
+   ===================================================================== */
 
 .adf-soulmate {
   --sm-paper: var(--fft-paper, #f3f2ee);
@@ -22037,6 +22427,11 @@ html body #page-body {
     font-size: 11px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 05 | MODULES ADF V2 — adf
+   Instagram (7 modèles) — adf-ig
+   ===================================================================== */
 
 .adf-ig {
   max-width: 100%;
@@ -22747,6 +23142,11 @@ html body #page-body {
   font-size: 13px;
   color: var(--fft-muted, #888888);
 }
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Absences — adf-absence
+   ===================================================================== */
+
 .adf-absence {
   --absence-paper: var(--fft-paper, #f3f2ee);
   --absence-line: var(--fft-line, #bdbcb6);
@@ -22914,6 +23314,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Recensement — adf-census
+   ===================================================================== */
+
 .adf-census {
   --census-paper: var(--fft-paper, #f3f2ee);
   --census-panel: var(--fft-panel, #e5e3de);
@@ -23148,6 +23553,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Demande de validation — adf-approval
+   ===================================================================== */
 
 .adf-approval {
   --approval-paper: var(--fft-paper, #f3f2ee);
@@ -23395,6 +23805,11 @@ html body #page-body {
     font-size: 9px;
   }
 }
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Boutique — adf-shop et tickets
+   ===================================================================== */
+
 .adf-shop,
 .adf-shop-ticket {
   --shop-paper: var(--fft-paper, #f3f2ee);
@@ -23837,6 +24252,11 @@ html body #page-body {
     padding: 11px 0;
   }
 }
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Demandes et gestion — adf-requests et tickets
+   ===================================================================== */
+
 .adf-requests,
 .adf-requests-ticket {
   --requests-paper: var(--fft-paper, #f3f2ee);
@@ -24195,6 +24615,11 @@ html body #page-body {
     padding: 11px 0;
   }
 }
+/* =====================================================================
+   ADF CSS | 07 | CODES RP © CHANDA
+   RP Classic — adf-rp-classic
+   ===================================================================== */
+
 .adf-rp-classic {
   width: 85%;
   max-width: 100%;
@@ -24279,6 +24704,11 @@ html body #page-body {
     font-size: 30px;
   }
 }
+/* =====================================================================
+   ADF CSS | 07 | CODES RP © CHANDA
+   RP Ornate — adf-rp-ornate
+   ===================================================================== */
+
 .adf-rp-ornate {
   width: 85%;
   max-width: 100%;
@@ -24370,6 +24800,11 @@ html body #page-body {
     line-height: 1.5;
   }
 }
+/* =====================================================================
+   ADF CSS | 07 | CODES RP © CHANDA
+   RP Photo, Layer, Side — adf-rp-photo / layer / side
+   ===================================================================== */
+
 .adf-rp-photo,
 .adf-rp-layer,
 .adf-rp-side {
@@ -24792,6 +25227,11 @@ html body #page-body {
     width: 94%;
   }
 }
+/* =====================================================================
+   ADF CSS | 06 | ADMINISTRATION ADF V2
+   Remerciements et crédits — adf-credits
+   ===================================================================== */
+
 .adf-credits {
   --credits-paper: var(--fft-paper, #f3f2ee);
   --credits-panel: var(--fft-panel, #e5e3de);
